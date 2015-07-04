@@ -213,8 +213,12 @@ Date of filling:		|		18 of September 2013		<!-- </PRE> -->
 <STYLE>
 <!--
 
-div#content {
+/* set both navbar and main text body: */
+div.container {
 	max-width: 650pt;
+}
+
+div#content {
 	padding: 20pt;
 	background-color: #F5F5F5;
 	border: 1px solid rgba(0, 0, 0, 0.15);
@@ -254,6 +258,15 @@ table.table {
 	width: 100%;
 	empty-cells: hide;
 	margin: 0pt;
+	border: none;
+}
+
+table.table td, table.table th {
+	border: none;
+}
+
+table.table td {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 table.table td:first-child {
