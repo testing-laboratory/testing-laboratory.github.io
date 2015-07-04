@@ -13,7 +13,7 @@
 <!-- BEGIN -->
 <!-- =================================================================== -->
 <xmp theme="united" style="display:none;">
-
+<a name="start"/></a> <!-- it is important to have some text or tags inside of <xmp> before first comment. In other case nothing is parsed by markdown parser. -->
 <PRE class="mainbody">
 # Sergey Kolomenkin - Curriculum Vitae
 
@@ -213,7 +213,7 @@ Article on Codeproject.com with [Task Manager Extension 2.0](http://www.codeproj
 This is a powerful utility that hooks standard Windows' Task Manager and
 extends it with a huge amount of new features.
 
-Date of filling:    18 of September 2013</pre>
+Date of filling:    18 of September 2013  </PRE>
 </xmp>
 <!-- =================================================================== -->
 <!-- END -->
@@ -223,77 +223,97 @@ Date of filling:    18 of September 2013</pre>
 <STYLE>
 <!--
 
-PRE.mainbody
-{
-	padding-left: 5%;
-	padding-right: 5%;
+div#content {
+	max-width: 650pt;
+	padding: 20pt;
+	background-color: #F5F5F5;
+	border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-BODY, PRE, TD
-{
+BODY, PRE, TD, TH {
 	font-size: 100%;
 	font-family: courier new, courier, monospace;
 }
 
-h1, h2, h3
-{
+h1, h2, h3 {
 	font-weight: bold;
 	margin: 0pt !important;
 }
 
-h1
-{
+h1 {
 	font-size: 130%;
 	margin-top: 15pt;
 }
 
-h2
-{
+h2 {
 	font-size: 100%;
 }
 
-h3
-{
+h3 {
 	font-size: 90%;
 	padding-left: 15pt;
 }
 
-p
-{
+p {
 	margin: 0pt !important;
+}
+
+
+/* two-column table formatting: */
+
+table.table {
+	width: 100%;
+	empty-cells: hide;
+	margin: 0pt;
+}
+
+table.table td:first-child {
+	width: 30%;
+}
+
+table.table td:last-child {
+	text-align: justify;
+}
+
+/* unused: */
+
+PRE.mainbody
+{
+	padding-left: 5%;
+	padding-right: 5%;
+	word-break: normal;
 }
 
 /* ============== DEBUG ONLY:  ============== */
 /*
 * /
 
-body
-{
+body {
 	margin: 5pt;
 	padding: 5pt;
 	border: solid 10pt cyan;
 }
 
-div.navbar
-{
+div.navbar {
 	margin: 5pt;
 	padding: 5pt;
 	border: solid 2pt blue;
 }
 
-div#content
-{
+div#content {
 	border: solid 2pt red;
 }
 
-PRE.mainbody
-{
+table {
+	border: solid 2pt orange;
+}
+
+PRE.mainbody {
 	margin: 5pt;
 	border: solid 2pt green;
 }
 
-p, h1, h2, h3
-{
+p, h1, h2, h3 {
 	border: gray solid 1px;
 }
 
@@ -301,6 +321,20 @@ p, h1, h2, h3
 
 -->
 </STYLE>
+
+<!-- ============================================= -->
+<script type="text/javascript">
+
+// Style tables: remove classes for stripes and borders:
+var tableEls = document.getElementsByTagName('table');
+for (var i=0, ii=tableEls.length; i<ii; i++)
+{
+	var tableEl = tableEls[i];
+	tableEl.className = 'table';
+} 
+
+</script>
+<!-- ============================================= -->
 
 </BODY>
 </HTML>
