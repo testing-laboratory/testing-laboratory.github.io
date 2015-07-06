@@ -13,8 +13,7 @@
 <!-- BEGIN -->
 <!-- =================================================================== -->
 <xmp theme="united" style="display:none;">
-<a name="start"/></a> <!-- it is important to have some text or tags inside of <xmp> before first comment. In other case nothing is parsed by markdown parser. -->
-<!-- <PRE class="mainbody"> -->
+
 # Sergey Kolomenkin - Curriculum Vitae
 
 ## Personal Information
@@ -203,7 +202,7 @@ extends it with a huge amount of new features.
 
 | |
 -|-
-Date of filling:		|		18 of September 2013		<!-- </PRE> -->
+Date of filling:		|		18 of September 2013
 </xmp>
 <!-- =================================================================== -->
 <!-- END -->
@@ -224,19 +223,17 @@ div#content {
 	border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-BODY, PRE, TD, TH {
+BODY, TD, TH {
 	font-size: 100%;
 	font-family: courier new, courier, monospace;
 }
 
 h1, h2, h3 {
 	font-weight: bold;
-	margin: 0pt !important;
 }
 
 h1 {
 	font-size: 130%;
-	margin-top: 15pt;
 }
 
 h2 {
@@ -246,10 +243,6 @@ h2 {
 h3 {
 	font-size: 90%;
 	padding-left: 15pt;
-}
-
-p {
-	margin: 0pt !important;
 }
 
 /* two-column table formatting: */
@@ -295,15 +288,6 @@ ul > li::before {
 	width: 15pt;
 }
 
-/* unused: */
-
-PRE.mainbody
-{
-	padding-left: 5%;
-	padding-right: 5%;
-	word-break: normal;
-}
-
 /* ============== DEBUG ONLY:  ============== */
 /*
 * /
@@ -320,22 +304,11 @@ div.navbar {
 	border: solid 2pt blue;
 }
 
-div#content {
-	border: solid 2pt red;
-}
+div#content { border: solid 2pt red; }
 
-table {
-	border: solid 2pt orange;
-}
+table {	border: solid 2pt orange; }
 
-PRE.mainbody {
-	margin: 5pt;
-	border: solid 2pt green;
-}
-
-p, h1, h2, h3 {
-	border: gray solid 1px;
-}
+p, h1, h2, h3 {	border: solid 1px gray; }
 
 /* ============== END OF DEBUG ONLY  ============== */
 
