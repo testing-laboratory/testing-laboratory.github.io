@@ -13,8 +13,7 @@
 <!-- BEGIN -->
 <!-- =================================================================== -->
 <xmp theme="united" style="display:none;">
-<a name="start"/></a> <!-- it is important to have some text or tags inside of <xmp> before first comment. In other case nothing is parsed by markdown parser. -->
-<!-- <PRE class="mainbody"> -->
+
 # Sergey Kolomenkin - Curriculum Vitae
 
 ## Personal Information
@@ -100,7 +99,7 @@ Altera MaxPlus        | 2
 
 ## Professional activity
 
-<hr style="border: 0; border-bottom: 1px solid black;" />
+<hr style="border: 0; border-bottom: 1pt solid black;" />
 
 | |
 -|-
@@ -112,7 +111,7 @@ Participation       | Core development
 Tools               | MS VS 6.0
 Technologies        | C++, COM, ATL, STL
 
-<hr style="border: 0; border-bottom: 1px solid black;" />
+<hr style="border: 0; border-bottom: 1pt solid black;" />
 
 | |
 -|-
@@ -125,7 +124,7 @@ Participation       | <ul><li>Core development.<br /> <li>Development of interna
 Tools               | MS VS 2005 (C++, managed C++)
 Technologies        | C++, managed C++
 
-<hr style="border: 0; border-bottom: 1px solid black;" />
+<hr style="border: 0; border-bottom: 1pt solid black;" />
 
 | |
 -|-
@@ -138,7 +137,7 @@ Participation       | <ul><li>Various support and development tasks<br /> <li>De
 Tools               | MSVC++ 6.0, IDA, WinDbg, SoftIce, NSIS
 Technologies        | C++, MFC, ASP
 
-<hr style="border: 0; border-bottom: 1px solid black;" />
+<hr style="border: 0; border-bottom: 1pt solid black;" />
 
 | |
 -|-
@@ -151,7 +150,7 @@ Participation       | <ul><li>Various support and development tasks.<br /> <li>W
 Tools               | MSVC++ .NET, Grammar Generator, ActiveState Xslt, ActiveState Perl, NSIS
 Technologies        | C++, MFC, ADO, COM, ATL, MS XML, Xslt, Yacc, Lex, Perl
 
-<hr style="border: 0; border-bottom: 1px solid black;" />
+<hr style="border: 0; border-bottom: 1pt solid black;" />
 
 | |
 -|-
@@ -163,7 +162,7 @@ Duties              | FPGA programming using VHDL.<br /> Writing a processor por
 Tools               | Xilinx ISE, Xilinx ModelSim, Altera MaxPlus, MSVC++ 6.0
 Technologies        | VHDL, C++, PCI bus
 
-<hr style="border: 0; border-bottom: 1px solid black;" />
+<hr style="border: 0; border-bottom: 1pt solid black;" />
 
 | |
 -|-
@@ -174,7 +173,7 @@ Duties              | Developing of digital device, decoding serial s/pdif signa
 Tools               | Xilinx ISE, Xilinx ModelSim
 Technologies        | VHDL
 
-<hr style="border: 0; border-bottom: 1px solid black;" />
+<hr style="border: 0; border-bottom: 1pt solid black;" />
 
 ## Awards
 
@@ -203,49 +202,47 @@ extends it with a huge amount of new features.
 
 | |
 -|-
-Date of filling:		|		18 of September 2013		<!-- </PRE> -->
+Date of filling:		|		18 of September 2013
 </xmp>
 <!-- =================================================================== -->
 <!-- END -->
 
-<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="strapdownjs.com/v/0.2/strapdown.js"></script>
 
 <STYLE>
 <!--
 
-div#content {
+/* set both navbar and main text body: */
+div.container {
 	max-width: 650pt;
-	padding: 20pt;
-	background-color: #F5F5F5;
-	border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-BODY, PRE, TD, TH {
-	font-size: 100%;
+div#content {
+	padding: 20pt;
+	background-color: #F5F5F5;
+	border: 1pt solid rgba(0, 0, 0, 0.15);
+}
+
+BODY, TD, TH {
+	font-size: 12pt;
 	font-family: courier new, courier, monospace;
 }
 
 h1, h2, h3 {
 	font-weight: bold;
-	margin: 0pt !important;
 }
 
 h1 {
-	font-size: 130%;
-	margin-top: 15pt;
+	font-size: 18pt;
 }
 
 h2 {
-	font-size: 100%;
+	font-size: 14pt;
 }
 
 h3 {
-	font-size: 90%;
+	font-size: 12pt;
 	padding-left: 15pt;
-}
-
-p {
-	margin: 0pt !important;
 }
 
 /* two-column table formatting: */
@@ -254,6 +251,15 @@ table.table {
 	width: 100%;
 	empty-cells: hide;
 	margin: 0pt;
+	border: none;
+}
+
+table.table td, table.table th {
+	border: none;
+}
+
+table.table td {
+	border-bottom: 1pt solid rgba(0, 0, 0, 0.15);
 }
 
 table.table td:first-child {
@@ -282,15 +288,6 @@ ul > li::before {
 	width: 15pt;
 }
 
-/* unused: */
-
-PRE.mainbody
-{
-	padding-left: 5%;
-	padding-right: 5%;
-	word-break: normal;
-}
-
 /* ============== DEBUG ONLY:  ============== */
 /*
 * /
@@ -307,22 +304,11 @@ div.navbar {
 	border: solid 2pt blue;
 }
 
-div#content {
-	border: solid 2pt red;
-}
+div#content { border: solid 2pt red; }
 
-table {
-	border: solid 2pt orange;
-}
+table {	border: solid 2pt orange; }
 
-PRE.mainbody {
-	margin: 5pt;
-	border: solid 2pt green;
-}
-
-p, h1, h2, h3 {
-	border: gray solid 1px;
-}
+p, h1, h2, h3 {	border: solid 1pt gray; }
 
 /* ============== END OF DEBUG ONLY  ============== */
 
