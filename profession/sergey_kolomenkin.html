@@ -2,7 +2,7 @@
 <HTML>
 <HEAD>
 <meta http-equiv="Content-Type" CONTENT="text/html; charset=utf-8">
-<TITLE>Sergey Kolomenkin - Curriculum Vitae</TITLE>
+<TITLE>Sergey Kolomenkin - Curriculum&nbsp;Vitae</TITLE>
 <META NAME="Generator" CONTENT="Notepad++">
 <META NAME="Author" CONTENT="Sergey Kolomenkin">
 <META NAME="LastEdited" CONTENT="2019-12-10">
@@ -19,16 +19,16 @@
 <!-- ===  It is written using Markdown and rendered using js.        === -->
 <!-- =================================================================== -->
 
-# Sergey Kolomenkin | C++ / Python Senior Developer
+# Sergey Kolomenkin | C++&nbsp;/&nbsp;Python Senior&nbsp;Developer
 
 ## Basic Information
 
 | |
 -|-
 Location              | Belarus, Minsk
-Contact infor&shy;mation | <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#111;&#108;&#111;&#109;&#101;&#110;&#107;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;'>&#107;&#111;&#108;&#111;&#109;&#101;&#110;&#107;&#105;&#110;<wbr />&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>; Skype: <a href="skype:kolomenkin">kolomenkin</a>; Viber
-Master degree         | Belarussian State University of Informatics and Radioelectronics, 2004
-Lan&shy;guages             | English - fluent, Russian - native.
+Contact infor&shy;mation | <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#111;&#108;&#111;&#109;&#101;&#110;&#107;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;'>&#107;&#111;&#108;&#111;&#109;&#101;&#110;&#107;&#105;&#110;<wbr />&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>; Skype: <a href="skype:kolomenkin">kolomenkin</a>
+Educa&shy;tion        | Master degree, Belarussian State University of Informatics and Radioelectronics, 2004
+Lan&shy;guages        | English - fluent, Russian - native.
 
 ## About myself
 
@@ -36,7 +36,7 @@ Lan&shy;guages             | English - fluent, Russian - native.
 **15+ years of experience in C++ development.**
 </p>
 <p class="about_me">
-I would like to find a breathtaking job at one of the areas: **R&amp;D, high-performance systems, multithreading, interprocess communication, asynchronous programming, low level speed optimization, crossplatform compilation** and etc.
+I would like to find a job at one of the areas: **R&amp;D, high-performance systems, multithreading, interprocess communication, asynchronous programming, low level speed optimization, crossplatform compilation**, etc.
 </p>
 <p class="about_me">
 At my new job I'm looking for opportunities to improve **software design, Python, CI** skills.
@@ -48,7 +48,7 @@ At my new job I'm looking for opportunities to improve **software design, Python
 -|-
 Expert                | **Crossplatform C++, STL, multithreading, multiprocess, networking** (all level protocols, especially HTTP), **CMake**, all kinds of WinAPI, MySQL, Regular expressions, Bash, Git<br /> <br /> Win32 system programming: Hooks, API Hooking, Gina, multithreaded and multiprocess applications
 Very Strong           | Software design, Python 3, Django, Cython, Windows file system filter drivers, Docker, Linux administration, OpenVPN, pki
-Strong                | Boost, WebRTC, x86 assembler, Nginx (including writing own modules)
+Strong                | Boost, WebRTC, x86 assembler, Nginx (can implement custom modules)
 
 <div style="display: none;">
 
@@ -89,8 +89,8 @@ Strong                | Boost, WebRTC, x86 assembler, Nginx (including writing o
 -|-
 Period              | March 2018 - Present
 Job-Position        | Principal Software Engineer
-Products            | Solarwinds Backup, [MSP Backup](https://www.solarwinds.com/backup)
-Partici&shy;pation  | Technical leadership in two internal startups (4-7 people). Designing ensemble of web-services. Reached fantastic results in using C++ STL in Windows kernel mode driver. Crossplatform C++ project creation. Designing and implementing of backend REST service using Django, Python. Interviewing candidates.
+Products            | Solarwinds Backup, [MSP Backup](https://www.solarwinds.com/backup), [Cloud to Cloud Backup](https://www.solarwindsmsp.com/products/backup/office-365), &hellip;
+Partici&shy;pation  | Technical leadership in two internal startups (4-7 people). Designing ensemble of web-services. Reached impressive results in using C++ STL in Windows kernel mode driver. Crossplatform C++ project creation. Designing and implementing of backend REST service using Django, Python. Interviewing candidates.
 Skills used (C++)   | C++ 17, STL, CMake, Windows kernel mode (file system filter driver), multithreading, networking, Boost, unit tests
 Skills used (Python)| Python 3.6+, Django, Django REST Framework (DRF), JSON API, Swagger (OpenAPI), type hints, pytest, flake8, pylint, mypy, pip-tools, uwsgi, Cython
 Skills used (other) | Docker (dockerfile, compose, kubernetes), Bash, Linux administration, TeamCity, SQLite, MySQL
@@ -226,12 +226,17 @@ body, td, th {
 	font-family: Tahoma, Helvetica, Arial;
 }
 
+.navbar .brand {
+	font-size: 115%;
+}
+
 h1, h2, h3 {
 	font-weight: bold;
 }
 
 h1 {
 	font-size: 143%;
+	margin: 0em;
 }
 
 h2 {
@@ -267,7 +272,7 @@ table.table td {
 }
 
 table.table td:first-child {
-	width: 20%;
+	width: 25%;
 }
 
 table.table td:last-child, p.about_me {
@@ -290,6 +295,17 @@ ul > li::before {
 	display: table-cell; /* aha! */
 	text-align: left;
 	width: 1em;
+}
+
+/* Smaller font for mobile devices */
+/* 66 em ~= 11 inches */
+@media screen and (max-device-width: 66em) {
+	body, td, th {
+		font-size: 10.5pt;
+	}
+	.navbar .brand {
+		font-weight: 400;
+	}
 }
 
 @media print {
