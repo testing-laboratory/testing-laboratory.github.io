@@ -380,6 +380,26 @@ wbr:after {
 	}
 }
 
+
+/* Avoid horizontal scroll in Chrome and MSIE when screen width is around 770-790 px */
+/* Internal CSS code was taken from bootstrap from one of rules "@media(max-width:767px)" */
+/* So we are trying to transfer logic from small screens to large ones. */
+@media(min-width: 768px) and (max-width: 835px) {
+	body {
+		padding-right: 20px;
+		padding-left: 20px
+	}
+	.navbar-fixed-top,
+	.navbar-fixed-bottom,
+	.navbar-static-top {
+		margin-right: -20px;
+		margin-left: -20px
+	}
+	.container {
+		width: auto
+	}
+}
+
 /* ============== DEBUG ONLY:  ============== */
 /*
 * /
