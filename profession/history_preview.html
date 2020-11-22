@@ -25,8 +25,8 @@
                 .then( r => r.text() )
                 .then( t => {
                     // document.write(t);
-                    var newHTML = document.open("text/html", "replace");
-                    newHTML.write(t);
+                    var newHTML = document.open('text/html', 'replace');
+                    newHTML.write(t.replace(/http:\/\//g, 'https://'));
                     newHTML.close();
                 })
         }
