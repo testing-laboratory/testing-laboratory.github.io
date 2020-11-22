@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Please wait! Loading the page...</title>
+
+    <script>
+        function ReplaceHtml() { 
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const commitHash = urlParams.get('commitHash')
+
+            if (commitHash === null) {
+                document.write('<div style="color: red; font-weight: bold;">ERROR! Missing URL parameter "commitHash"!</div>');
+                return;
+            }
+
+            if (!/^[a-f0-9]{40}$/.test(commitHash)) {
+                document.write('<div style="color: red; font-weight: bold;">ERROR! URL parameter "commitHash" has invalid value! Please use exactly 40 lowercase hexadecimals.</div>');
+                return;
+            }
+
+            const fileUrl = `https://raw.githubusercontent.com/kolomenkin/www/${commitHash}/profession/sergey_kolomenkin.html`
+
+            fetch(fileUrl)
+                .then( r => r.text() )
+                .then( t => {
+                    // document.write(t);
+                    var newHTML = document.open("text/html", "replace");
+                    newHTML.write(t);
+                    newHTML.close();
+                })
+        }
+    </script>
+</head>
+<body>
+    <h1>Please wait! Loading the page...</h1>
+
+    <script>ReplaceHtml();</script>
+</body>
+</html>
