@@ -222,70 +222,70 @@ Updated on: 10 of May 2021
 <!--
 
 div#content, .navbar {
-	/* TODO: .navbar needs to specify width equal to page width. This matters in case of horizontal scroll */
-	min-width: 200pt;
+  /* TODO: .navbar needs to specify width equal to page width. This matters in case of horizontal scroll */
+  min-width: 200pt;
 }
 
 div#content, .navbar .container {
-	max-width: 650pt;
+  max-width: 650pt;
 }
 
 div#content {
-	padding: 1.5em;
-	background-color: #F5F5F5;
-	border: 1pt solid rgba(0, 0, 0, 0.15);
+  padding: 1.5em;
+  background-color: #F5F5F5;
+  border: 1pt solid rgba(0, 0, 0, 0.15);
 }
 
 body {
-	font-family: Tahoma, Helvetica, Arial;
+  font-family: Tahoma, Helvetica, Arial;
 }
 
 body, table {
-	font-size: 13pt;
+  font-size: 13pt;
 }
 
 .navbar .brand {
-	font-size: 115%;
+  font-size: 115%;
 }
 
 h1, h2, h3 {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 h1 {
-	font-size: 143%;
-	margin: 0em;
+  font-size: 143%;
+  margin: 0em;
 }
 
 h2 {
-	font-size: 115%;
-	padding-top: 0.7em;
+  font-size: 115%;
+  padding-top: 0.7em;
 }
 
 h3 {
-	font-size: 100%;
-	padding-left: 1em;
+  font-size: 100%;
+  padding-left: 1em;
 }
 
 /* two-column table formatting: */
 
 table.table {
-	width: 100%;
-	margin: 0em;
-	border: none;
+  width: 100%;
+  margin: 0em;
+  border: none;
 }
 
 table.table th {
-	padding-top: 0em;
-	padding-bottom: 0em;
+  padding-top: 0em;
+  padding-bottom: 0em;
 }
 
 table.table td, table.table th {
-	border: none;
+  border: none;
 }
 
 table.table td {
-	border-bottom: 1pt solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1pt solid rgba(0, 0, 0, 0.15);
 }
 
 /*
@@ -296,8 +296,8 @@ table.table td {
  45pt equals 76px on my display in Chrome, Windows 10
 */
 table.table td:first-child {
-	width: 26%;
-	min-width: 45pt;
+  width: 26%;
+  min-width: 45pt;
 }
 
 /* 
@@ -306,36 +306,36 @@ table.table td:first-child {
  size is recalculated after screen is crossing 980px width
 */
 @media only screen and (min-width: 980px) {
-	table.table td:first-child {
-		width: 22%;
-	}
+  table.table td:first-child {
+    width: 22%;
+  }
 }
 
 table.table td:last-child, p.about_me {
-	text-align: justify;
+  text-align: justify;
 }
 
 /* fix lists line indentation: */
 
 ul {
-	display: table;
-	margin: 0em;
+  display: table;
+  margin: 0em;
 }
 
 ul > li {
-	display: table-row;
+  display: table-row;
 }
 
 ul > li::before {
-	content: "-";
-	display: table-cell; /* aha! */
-	text-align: left;
-	width: 1em;
+  content: "-";
+  display: table-cell; /* aha! */
+  text-align: left;
+  width: 1em;
 }
 
 /* emulate <wbr> support in MSIE */
 wbr:after {
-	content: "\00200B";
+  content: "\00200B";
 }
 
 /* Smaller font for mobile devices */
@@ -344,49 +344,49 @@ wbr:after {
 /* 30 em ~= 5 inches ~= 12.7 cm */
 @media only screen and (max-device-width: 30em) {
 
-	body, table {
-		font-size: 10.5pt;
-	}
+  body, table {
+    font-size: 10.5pt;
+  }
 
-	div#content, .navbar {
-		min-width: 130pt;
-	}
+  div#content, .navbar {
+    min-width: 130pt;
+  }
 
-	.navbar .brand {
-		font-weight: 400;
-	}
+  .navbar .brand {
+    font-weight: 400;
+  }
 }
 
 @media only print {
-	/* Printing is optimized for A4 portrait orientation, Google Chrome, Windows 10 */
+  /* Printing is optimized for A4 portrait orientation, Google Chrome, Windows 10 */
 
-	/* Reduce font size from 13pt for printing */
-	body, table {
-		font-size: 12pt;
-	}
+  /* Reduce font size from 13pt for printing */
+  body, table {
+    font-size: 12pt;
+  }
 
-	/* hide fixed brown top block */
-	div.navbar-fixed-top {
-		display:none;
-	}
+  /* hide fixed brown top block */
+  div.navbar-fixed-top {
+    display:none;
+  }
 
-	/* By the way, the following is not supported by any browser in 2019:
-		https://www.w3schools.com/cssref/pr_print_pageba.asp
-		page-break-before: avoid;
-		page-break-after: avoid;
-	*/
+  /* By the way, the following is not supported by any browser in 2019:
+    https://www.w3schools.com/cssref/pr_print_pageba.asp
+    page-break-before: avoid;
+    page-break-after: avoid;
+  */
 
-	table.table, p.about_me {
-		page-break-inside: avoid;
-	}
+  table.table, p.about_me {
+    page-break-inside: avoid;
+  }
 }
 
 /* Special font size for MSIE 11. Font 12 pt makes MSIE 11 to break first page into two. */
 @media only print and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	 /* IE10+ CSS styles go here */
-	body, table {
-		font-size: 11pt;
-	}
+   /* IE10+ CSS styles go here */
+  body, table {
+    font-size: 11pt;
+  }
 }
 
 
@@ -394,19 +394,19 @@ wbr:after {
 /* Internal CSS code was taken from bootstrap from one of rules "@media(max-width:767px)" */
 /* So we are trying to transfer logic from small screens to large ones. */
 @media(min-width: 768px) and (max-width: 835px) {
-	body {
-		padding-right: 20px;
-		padding-left: 20px
-	}
-	.navbar-fixed-top,
-	.navbar-fixed-bottom,
-	.navbar-static-top {
-		margin-right: -20px;
-		margin-left: -20px
-	}
-	.container {
-		width: auto
-	}
+  body {
+    padding-right: 20px;
+    padding-left: 20px
+  }
+  .navbar-fixed-top,
+  .navbar-fixed-bottom,
+  .navbar-static-top {
+    margin-right: -20px;
+    margin-left: -20px
+  }
+  .container {
+    width: auto
+  }
 }
 
 /* ============== DEBUG ONLY:  ============== */
@@ -414,20 +414,20 @@ wbr:after {
 * /
 
 table.table th {
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
 }
 
 body {
-	margin: 0.35em;
-	padding: 0.35em;
-	border: solid 10pt cyan;
+  margin: 0.35em;
+  padding: 0.35em;
+  border: solid 10pt cyan;
 }
 
 div.navbar {
-	margin: 0.35em;
-	padding: 0.35em;
-	border: solid 2pt blue;
+  margin: 0.35em;
+  padding: 0.35em;
+  border: solid 2pt blue;
 }
 
 div#content { border: solid 2pt red; }
@@ -438,7 +438,7 @@ table.table th { border: dashed 1pt pink; }
 
 table.table td { border: dotted 1pt blue; }
 
-p, h1, h2, h3 {	border: solid 1pt gray; }
+p, h1, h2, h3 {  border: solid 1pt gray; }
 
 /* ============== END OF DEBUG ONLY  ============== */
 
@@ -467,34 +467,34 @@ A bit obfucated code. Sorry for the style:
 -->
 <script>
 function from_b58(encodedString, charSet) {
-    var d = [],
-        b = [],
-        i, j, c, n;
-    for (i = 0; i < encodedString.length; i++) {
-        j = 0, c = charSet.indexOf(encodedString[i]);
-        if (c < 0) return undefined;
-        c || b.length ^ i ? i : b.push(0);
-        while (j in d || c) {
-            n = d[j];
-            n = n ? n * 58 + c : c;
-            c = n >> 8;
-            d[j] = n % 256;
-            j++
-        }
+  var d = [],
+    b = [],
+    i, j, c, n;
+  for (i = 0; i < encodedString.length; i++) {
+    j = 0, c = charSet.indexOf(encodedString[i]);
+    if (c < 0) return undefined;
+    c || b.length ^ i ? i : b.push(0);
+    while (j in d || c) {
+      n = d[j];
+      n = n ? n * 58 + c : c;
+      c = n >> 8;
+      d[j] = n % 256;
+      j++
     }
-    while (j--) b.push(d[j]);
-    return new Uint8Array(b)
+  }
+  while (j--) b.push(d[j]);
+  return new Uint8Array(b)
 }
 function unhide_info(encodedString) {
-    var decoded = new TextDecoder('utf-8').decode(from_b58(encodedString, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'));
-    return decoded.replace(/@/g, ' ERROR ').replace(/\$/g, '&commat;').replace(/\//g, '&period;');
+  var decoded = new TextDecoder('utf-8').decode(from_b58(encodedString, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'));
+  return decoded.replace(/@/g, ' ERROR ').replace(/\$/g, '&commat;').replace(/\//g, '&period;');
 }
 function mail_link(encodedString) {
-    var mail = unhide_info(encodedString);
-    return '<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;' + mail + '">' + mail.replace(/&commat;/g, '<wbr />&commat;') + '</a>';
+  var mail = unhide_info(encodedString);
+  return '<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;' + mail + '">' + mail.replace(/&commat;/g, '<wbr />&commat;') + '</a>';
 }
 function put_mail_link(elementId, encodedString) {
-    document.getElementById(elementId).innerHTML = mail_link(encodedString);
+  document.getElementById(elementId).innerHTML = mail_link(encodedString);
 }
 
 // Decode private information:
@@ -512,8 +512,8 @@ put_mail_link('ovi_mail', '23kYwuUQNcijqLCSYeFNdcPN');
 var tableEls = document.getElementsByTagName('table');
 for (var i = 0, ii = tableEls.length; i < ii; i++)
 {
-	var tableEl = tableEls[i];
-	tableEl.className = 'table';
+  var tableEl = tableEls[i];
+  tableEl.className = 'table';
 } 
 
 </script>
