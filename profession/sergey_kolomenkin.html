@@ -368,6 +368,18 @@ wbr:after {
 @media only print {
   /* Printing is optimized for A4 portrait orientation, Google Chrome, Windows 10 */
 
+  /* Fix page size and margins for printing in Chrome */
+  @page {
+    size: A4 portrait;
+    margin: 1cm;
+  }
+
+  /* Print background color by default: Chrome, Edge, Firefox */
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
   /* Reduce font size from 13pt for printing */
   body, table {
     font-size: 12pt;
