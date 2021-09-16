@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /profession/noindex/
+Disallow: *?show_photo=1
