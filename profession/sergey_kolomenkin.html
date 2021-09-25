@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Sergey Kolomenkin - Curriculum&nbsp;Vitae</title>
-<meta name="Generator" content="Notepad++">
-<meta name="Author" content="Sergey Kolomenkin">
-<meta name="LastEdited" content="2021-09-15">
-<meta name="Keywords" content="C++, Python, software engineer, software developer, programming, Sergey Kolomenkin, resume, Curriculum Vitae, CV">
-<link rel="shortcut icon" href="favicon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Generator" content="Notepad++" />
+  <meta name="Author" content="Sergey Kolomenkin" />
+  <meta name="LastEdited" content="2021-09-15" />
+  <meta name="Keywords" content="C++, Python, software engineer, software developer, programming, Sergey Kolomenkin, resume, Curriculum Vitae, CV" />
+  <link rel="shortcut icon" href="favicon.png" />
 
-<script>
-// Redirect to HTTPS
-if (window.location.protocol == 'http:') {
-  window.location.href = window.location.href.replace('http:', 'https:');
-}
-</script>
+  <title>Sergey Kolomenkin - Curriculum&nbsp;Vitae</title>
+
+  <script>
+    // Redirect to HTTPS
+    if (window.location.protocol == 'http:') {
+      window.location.href = window.location.href.replace('http:', 'https:');
+    }
+  </script>
 
 </head>
 <body>
@@ -217,7 +218,7 @@ Updated on: 15 of September 2021
 
 <script src="./strapdownjs.com/v/0.2/strapdown.js"></script>
 
-<STYLE>
+<style>
 <!--
 
 div#content, .navbar {
@@ -462,7 +463,7 @@ p, h1, h2, h3 {  border: solid 1pt gray; }
 /* ============== END OF DEBUG ONLY  ============== */
 
 -->
-</STYLE>
+</style>
 
 <!-- ============================================= -->
 
@@ -505,11 +506,11 @@ function from_b58(encodedString, charSet) {
   return new Uint8Array(b)
 }
 function unhide_info(encodedString) {
-  var decoded = new TextDecoder('utf-8').decode(from_b58(encodedString, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'));
+  const decoded = new TextDecoder('utf-8').decode(from_b58(encodedString, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'));
   return decoded.replace(/@/g, ' ERROR ').replace(/\$/g, '&commat;').replace(/\//g, '&period;');
 }
 function mail_link(encodedString) {
-  var mail = unhide_info(encodedString);
+  const mail = unhide_info(encodedString);
   return '<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;' + mail + '">' + mail.replace(/&commat;/g, '<wbr />&commat;') + '</a>';
 }
 function put_mail_link(elementId, encodedString) {
@@ -525,7 +526,7 @@ put_mail_link('my_mail', '2Vp5awyT62PT8Utj4jPUWE4wsY6Y');
 <script>
 
 // Style tables: remove classes for stripes and borders:
-var items = document.getElementsByTagName('table');
+const items = document.getElementsByTagName('table');
 for (var i = 0, n = items.length; i < n; i++)
 {
   items[i].className = 'table';
