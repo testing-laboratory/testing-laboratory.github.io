@@ -516,38 +516,52 @@ function mail_link(encodedString) {
 function put_mail_link(elementId, encodedString) {
   document.getElementById(elementId).innerHTML = mail_link(encodedString);
 }
-
-// Decode private information:
-put_mail_link('my_mail', '2Vp5awyT62PT8Utj4jPUWE4wsY6Y');
-
 </script>
 
 <!-- ============================================= -->
 <script>
 
-// Style tables: remove classes for stripes and borders:
-const items = document.getElementsByTagName('table');
-for (var i = 0, n = items.length; i < n; i++)
+function setupPage()
 {
-  items[i].className = 'table';
+  // Decode private information:
+  put_mail_link('my_mail', '2Vp5awyT62PT8Utj4jPUWE4wsY6Y');
+
+  // Style tables: remove classes for stripes and borders:
+  const items = document.getElementsByTagName('table');
+  for (var i = 0, n = items.length; i < n; i++)
+  {
+    items[i].className = 'table';
+  }
+
+  // Enable photo block:
+  if (window.location.search.includes('show_photo=1'))
+  {
+    document.getElementById('basic_info_id').className = 'basic_info_with_photo';
+    document.getElementById('main_photo_div').hidden = false;
+    document.getElementById('main_photo_img').src = getImageURL();
+  }
+
+  if (window.location.search.includes('content=cover_letter'))
+  {
+    document.getElementById('cover_letter_content').hidden = false;
+  }
+  else
+  {
+    document.getElementById('cv_content').hidden = false;
+  }
 }
 
-// Enable photo block:
-if (window.location.search.includes('show_photo=1'))
+function getImageURL()
 {
-  document.getElementById('basic_info_id').className = 'basic_info_with_photo';
-  document.getElementById('main_photo_div').hidden = false;
-  document.getElementById('main_photo_img').src = './noindex/photo_01.jpg';
+  return './noindex/photo_01.jpg';
+  // ========================================
+  const prefix = 'data:image/jpeg;base64,';
+  // https://www.motobit.com/util/base64-decoder-encoder.asp
+  const data = ``;
+  return prefix + data.replace(/\n|\r/g, '');
 }
 
-if (window.location.search.includes('content=cover_letter'))
-{
-  document.getElementById('cover_letter_content').hidden = false;
-}
-else
-{
-  document.getElementById('cv_content').hidden = false;
-}
+setupPage();
 
 </script>
 <!-- ============================================= -->
