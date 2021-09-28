@@ -32,19 +32,23 @@
 <!-- full printable CV: ?show_photo=1 -->
 <!-- full printable cover letter: ?content=cover_letter&show_photo=1 -->
 
-# Sergey Kolomenkin | <nobr>C++ / Python</nobr> <nobr>Senior Developer</nobr>
+# Sergey Kolomenkin
 
 <!-- =============================================================== -->
 
 <div id="basic_info_id" style="float: left; width: 100%;">
   <div style="float: left;" id="main_photo_div" hidden>
-    <img src="" id="main_photo_img" alt="photo" style="margin: 12pt; height:144pt;"/>
+    <img src="" id="main_photo_img" alt="photo" style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
   </div>
+
+<div class="desired_specialization">
+**<nobr>C++ / Python</nobr> <nobr>Senior Developer</nobr>**
+</div>
 
 | | |
 |-|-|
 | Loca&shy;tion         | Minsk, Belarus |
-| Reloca&shy;tion       | I am willing and ready to move to London, UK.<br /> I will need sponsorship to obtain a visa. |
+| Reloca&shy;tion       | I am willing and ready to move to London, UK.<br /> Sponsorship is required to obtain a visa. |
 | Email                 | <span id="my_mail"></span><!-- ; Skype: <a href="skype:kolomenkin">kolomenkin</a> --> |
 | Expe&shy;rience       | 17 years in software development |
 
@@ -102,9 +106,9 @@ Positions in the following areas are of special interest for me: **C++, research
 
 | |
 |-|
-| I quit my job to focus on preparing for faang interviews and spending more time with my family. |
+| I quit my job to focus on preparing for interviews, spending more time with my family, handling relocation issues. |
 
-### N-able (ex-SolarWinds) | <nobr>Mar 2018 - Jun 2021</nobr> | <nobr>Principal Software Engineer</nobr>
+### N-able (ex-SolarWinds) | <nobr>Principal Software Engineer</nobr> | <nobr>Mar 2018 - Jun 2021</nobr>
 
 | | |
 |-|-|
@@ -115,7 +119,7 @@ Positions in the following areas are of special interest for me: **C++, research
 | Skills used: other    | Docker, Bash, Linux administration, TeamCity DSL, SQLite, MySQL, AWS |
 
 
-### Rakuten Viber | <nobr>August 2015 - February 2018</nobr> | <nobr>Senior Software Engineer</nobr>
+### Rakuten Viber | <nobr>Senior Software Engineer</nobr> | <nobr>August 2015 - February 2018</nobr>
 
 | | |
 |-|-|
@@ -126,37 +130,38 @@ Positions in the following areas are of special interest for me: **C++, research
 
 <!-- <div style="page-break-after: always;"></div> -->
 
-### Optimal Software | <nobr>January 2012 - July 2015</nobr> | <nobr>Senior Software Developer</nobr>
+### Optimal Software | <nobr>Senior Software Developer</nobr> | <nobr>January 2012 - July 2015</nobr>
 
 | | |
 |-|-|
-| Partici&shy;pation    | Design and development of a VPN solution with custom VPN client for Windows.<br /> A wide range responsibilities, from implementing a VPN client using C++ and C#, passing web services to Linux server administration and implementing custom Nginx modules. |
+| Partici&shy;pation    | Design and development of a VPN solution with custom VPN client for Windows. |
+| Re&shy;sponsi&shy;bilities | A wide range responsibilities, from implementing a VPN client using C++ and C#, passing web services to Linux server administration and implementing custom Nginx modules. |
 | Skills used           | C++, STL, Boost, multithreading, networking, WinAPI, Nginx, HTTP, OpenVPN, Linux administration, Inno setup |
 
 <div style="page-break-after: always;"></div>
 
-### Web crawler startup | <nobr>Jan 2008 - Jan 2012</nobr> | <nobr>Owner, Software Developer</nobr>
+### Web crawler startup | <nobr>Owner, Software Developer</nobr> | <nobr>Jan 2008 - Jan 2012</nobr>
 
 | | |
 |-|-|
 | Partici&shy;pation    | System design, development, unit tests, system administration and monitoring |
 | Skills used           | C++, STL, HTTP, regular expressions, multithreading, WinAPI, Sqlite, MySQL, PHP, unit tests |
 
-### Artezio | <nobr>February 2007 - January 2008</nobr> | <nobr>Senior Software Developer</nobr>
+### Artezio | <nobr>Senior Software Developer</nobr> | <nobr>February 2007 - January 2008</nobr>
 
 | | |
 |-|-|
 | Partici&shy;pation    | Software development, refactoring legacy, writing unit tests |
 | Skills used           | C++, COM, ATL, STL, WinAPI |
 
-### Applica | <nobr>April 2004 - August 2006</nobr> | <nobr>System Software Developer</nobr>
+### Applica | <nobr>System Software Developer</nobr> | <nobr>April 2004 - August 2006</nobr>
 
 | | |
 |-|-|
 | Partici&shy;pation    | <ul><li>Development of various low-level tricks with Windows: Gina replacement, API hooking, kernel debugging.<br /> <li>Tricks with tcp/ip stack on Windows: NDIS, TDI, LSP filtering.<br /> <li>Reverse engineering.<br /> <li>Manual decoding of high-level network protocols from an Ethernet packet flow. |
 | Skills used           | C++, MFC, WinAPI, ASP, IDA, WinDbg, SoftIce, NSIS |
 
-### Ispirer | <nobr>June 2003 - April 2004</nobr> | <nobr>Software Developer</nobr>
+### Ispirer | <nobr>Software Developer</nobr> | <nobr>June 2003 - April 2004</nobr>
 
 | | |
 |-|-|
@@ -207,10 +212,8 @@ about the Task Manager Extension.
 </div> <!-- <div id="cv_content"> -->
 <!-- =============================================================== -->
 
-<div>
 <br />
 Updated on: 15 of September 2021
-</div>
 
 </xmp>
 <!-- =================================================================== -->
@@ -264,7 +267,12 @@ h2 {
 
 h3 {
   font-size: 100%;
-  padding-left: 8px;
+}
+
+/* The same left padding for various items */
+
+h3, table.table td, div.desired_specialization, p, ul {
+  padding-left: 0px;
 }
 
 /* two-column table formatting: */
@@ -291,7 +299,12 @@ table.table td {
 /* Help table in "Basic info" block to float right to the photo: */
 div.basic_info_with_photo table {
   width: auto;
+}
+
+div.desired_specialization {
+  display: inline-block;
   margin-top: 1em;
+  margin-bottom: 0.3em;
 }
 
 /*
