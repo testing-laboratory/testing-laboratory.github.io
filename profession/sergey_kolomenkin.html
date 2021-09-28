@@ -56,7 +56,7 @@
 
 <!-- fix Markdown rendering for <H> header below --> <div style="display: none;"></div>
 
-## Cover letter
+## Cover Letter
 
 <p class="about_me">
 During **15+ years in C++** I was working on various projects including system programming, computer networking, multithreading, interprocess communication for destop applications, mobile apps, backend services.
@@ -71,7 +71,7 @@ I'm looking for a challenging innovative position, where I can design technicall
 Positions in the following areas are of special interest for me: **C++, research, high-performance systems, multithreading, interprocess communication, asynchronous programming, low-level speed optimization, cross-platform compilation**.
 </p>
 
-**General strengths**
+**General Strengths**
 
 - deep knowledge and understanding of used technologies
 - system design
@@ -84,7 +84,7 @@ Positions in the following areas are of special interest for me: **C++, research
 <div id="cv_content" hidden>
 <!-- =============================================================== -->
 
-## Major technical strengths
+## Major Technical Strengths
 
 | | |
 |-|-|
@@ -104,7 +104,7 @@ Positions in the following areas are of special interest for me: **C++, research
 |-|
 | I quit my job to focus on preparing for faang interviews and spending more time with my family. |
 
-### N-able (ex-Solarwinds) | <nobr>Mar 2018 - Jun 2021</nobr> | <nobr>Principal Software Engineer</nobr>
+### N-able (ex-SolarWinds) | <nobr>Mar 2018 - Jun 2021</nobr> | <nobr>Principal Software Engineer</nobr>
 
 | | |
 |-|-|
@@ -171,10 +171,10 @@ Positions in the following areas are of special interest for me: **C++, research
 
 | | |
 |-|-|
-| Educa&shy;tion        | Master's degree, Computers, Systems and Networks, Belarussian State University of Informatics and Radio&shy;electronics, 2004 |
+| Educa&shy;tion        | Master's degree, Computers, Systems and Networks, Belarusian State University of Informatics and Radio&shy;electronics, 2004 |
 | Lan&shy;guages        | English - fluent (B2, IELTS 6.5), Russian - native |
 
-### Web site accounts
+### Web Site Accounts
 
 | | |
 |-|-|
@@ -182,7 +182,7 @@ Positions in the following areas are of special interest for me: **C++, research
 | GitHub                | [github.com&ZeroWidthSpace;/kolomenkin](https://github.com/kolomenkin) |
 | Stack&shy;Over&shy;flow | [stackoverflow.com&ZeroWidthSpace;/users/739731/sergey](https://stackoverflow.com/users/739731/sergey) |
 
-### Coding contests
+### Coding Contests
 
 | | |
 |-|-|
@@ -543,7 +543,10 @@ function setupPage()
 
   if (window.location.search.includes('content=cover_letter'))
   {
+    const title = 'Sergey Kolomenkin - Cover Letter'
     document.getElementById('cover_letter_content').hidden = false;
+    document.title = title
+    document.getElementById('headline').innerHTML = title
   }
   else
   {
@@ -555,10 +558,10 @@ function getImageURL()
 {
   return './noindex/photo_01.jpg';
   // ========================================
-  const prefix = 'data:image/jpeg;base64,';
+  // const prefix = 'data:image/jpeg;base64,';
   // https://www.motobit.com/util/base64-decoder-encoder.asp
-  const data = ``;
-  return prefix + data.replace(/\n|\r/g, '');
+  // const data = ``;
+  // return prefix + data.replace(/\n|\r/g, '');
 }
 
 setupPage();
