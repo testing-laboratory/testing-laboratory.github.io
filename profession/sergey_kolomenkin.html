@@ -534,14 +534,14 @@ function setupPage()
   }
 
   // Enable photo block:
-  if (window.location.search.includes('show_photo=1'))
+  if (window.location.search.indexOf('show_photo=1') >= 0)
   {
     document.getElementById('basic_info_id').className = 'basic_info_with_photo';
     document.getElementById('main_photo_div').hidden = false;
     document.getElementById('main_photo_img').src = getImageURL();
   }
 
-  if (window.location.search.includes('content=cover_letter'))
+  if (window.location.search.indexOf('content=cover_letter') >= 0)
   {
     const title = 'Sergey Kolomenkin - Cover Letter'
     document.getElementById('cover_letter_content').hidden = false;
