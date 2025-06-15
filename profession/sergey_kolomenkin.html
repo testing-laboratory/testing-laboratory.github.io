@@ -17,53 +17,70 @@
     }
   </script>
 
+  <link href="./strapdownjs.com/v/0.2/themes/united.min.css" rel="stylesheet">
+  <link href="./strapdownjs.com/v/0.2/strapdown.css" rel="stylesheet">
+  <link href="./strapdownjs.com/v/0.2/themes/bootstrap-responsive.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="navbar navbar-fixed-top"><div class="navbar-inner">
+<div class="container">
+<div id="headline" class="brand">Sergey Kolomenkin - Curriculum&nbsp;Vitae</div>
+</div>
+</div>
+</div>
 
 <!-- BEGIN -->
 <!-- =================================================================== -->
-<xmp theme="united" style="display:none;">
+<div class="container" id="content">
 
 <!-- =================================================================== -->
-<!-- ===  YOU ARE WELCOME TO WATCH THE FULL VERSION OF MY CV HERE!   === -->
-<!-- ===  It is written using Markdown and rendered using JS.        === -->
+<!-- Show full printable CV: ?show_photo=1 -->
+<!-- Show full printable cover letter: ?content=cover_letter&show_photo=1 -->
 <!-- =================================================================== -->
 
-<!-- full printable CV: ?show_photo=1 -->
-<!-- full printable cover letter: ?content=cover_letter&show_photo=1 -->
-
-# Sergey Kolomenkin
+<h1>Sergey Kolomenkin</h1>
 
 <!-- =============================================================== -->
 
 <div id="basic_info_id" style="float: left; width: 100%;">
   <div style="float: left;" id="main_photo_div" hidden>
-    <img src="" id="main_photo_img" alt="photo" style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
+    <img src="" id="main_photo_img" alt="photo" style="margin-top: 12pt; margin-right: 12pt; height:144pt;" />
   </div>
 
 <div class="desired_specialization">
-**Senior C++ Developer**
+<strong>Senior C++ Developer</strong>
 </div>
 
-| | |
-|-|-|
-| Loca&shy;tion         | Warsaw, Poland |
-| Reloca&shy;tion       | I am ready to move |
-| Email                 | <span id="my_mail"></span> |
-| Expe&shy;rience       | 20+ years in software development |
-
+<table class="table">
+<tr>
+<td>Loca&shy;tion</td>
+<td>Warsaw, Poland</td>
+</tr>
+<tr>
+<td>Reloca&shy;tion</td>
+<td>I am ready to move</td>
+</tr>
+<tr>
+<td>Email</td>
+<td><span id="my_mail"><a href="mailto:kolomenkin@gmail.com">kolomenkin<wbr>@gmail.com</a></span></td>
+</tr>
+<tr>
+<td>Expe&shy;rience</td>
+<td>20+ years in software development</td>
+</tr>
+</table>
+<p></p>
 </div>
+<p></p>
 
 <!-- =============================================================== -->
 
 <div id="cover_letter_content" hidden>
 
-<!-- fix Markdown rendering for <H> header below --> <div style="display: none;"></div>
-
-## Cover Letter
+<h2>Cover Letter</h2>
 
 <p class="about_me">
-During **20+ years in C++** I was working on various projects including
+During <strong>20+ years in C++</strong> I was working on various projects including
 system programming, computer networking, multithreading, interprocess communication
 for destop applications, mobile apps, backend services.
 </p>
@@ -75,168 +92,302 @@ where I can design technically complex software solutions and develop new cuttin
 
 <p class="about_me">
 Positions in the following areas are of special interest for me:
-**C++, research, high-performance systems, high load, multithreading,
+<strong>C++, research, high-performance systems, high load, multithreading,
 interprocess communication, asynchronous programming,
-low-level speed optimization, cross-platform compilation**.
+low-level speed optimization, cross-platform compilation</strong>.
 </p>
 
-**General Strengths**
-
-- deep knowledge and understanding of used technologies
-- system design
-- helping, training colleagues
-- striving for stable CI/CD process, internal tools, unit tests
-
-</div> <!-- <div id="cover_letter_content"> -->
+<p><strong>General Strengths</strong></p>
+<ul>
+<li>deep knowledge and understanding of used technologies</li>
+<li>system design</li>
+<li>helping, training colleagues</li>
+<li>striving for stable CI/CD process, internal tools, unit tests</li>
+</ul>
+<p></p>
+</div> <!-- close cover_letter_content -->
+<p></p>
 
 <!-- =============================================================== -->
 <div id="cv_content" hidden>
 <!-- =============================================================== -->
 
-## Major Technical Strengths
-
-| | |
-|-|-|
-| Expert                | **Cross-platform, multithreading, multiprocessing, async, networking**, MySQL, Bash, C++, STL, Boost.Asio, Boost.Beast, CMake, Win32 system level and high-level programming |
-| Very Strong           | Software design, Windows file system filter drivers, Docker, Linux administration, <nobr>Python 3</nobr>, hardware design |
-| Strong                | Kubernetes, Boost, x86 assembler, OpenVPN, Django, DRF |
-
+<h2>Major Technical Strengths</h2>
+<table class="table">
+<tr>
+<td>Expert</td>
+<td><strong>Cross-platform, multithreading, multiprocessing, async, networking</strong>, MySQL, Bash, C++, STL, Boost.Asio, Boost.Beast, CMake, Win32 system level and high-level programming</td>
+</tr>
+<tr>
+<td>Very Strong</td>
+<td>Software design, Windows file system filter drivers, Docker, Linux administration, <nobr>Python 3</nobr>, hardware design</td>
+</tr>
+<tr>
+<td>Strong</td>
+<td>Kubernetes, Boost, x86 assembler, OpenVPN, Django, DRF</td>
+</tr>
+</table>
 <!-- =============================================================== -->
 
 <!-- <div style="page-break-after: always;"></div> -->
 
-## Experience
+<h2>Experience</h2>
 
 
-### Gaijin Enter&shy;tainment, Hungary | <nobr>Senior Software Engineer</nobr> | <nobr>June 2022 - now</nobr>
+<h3>Gaijin Enter&shy;tainment, Hungary | <nobr>Senior Software Engineer</nobr> | <nobr>June 2022 - now</nobr></h3>
 
-| | |
-|-|-|
-| Re&shy;sponsi&shy;bilities | Design and implement high-load infrastructure web service written in C++ using asynchronous programming, WebSockets, NATS messaging broker. Writing code, code review, interviewing candidates, build engineering (CI/CD), unit tests. |
-| Skills used: C++      | C++ 20, Boost.Asio, Boost.Beast, coroutines, STL, CMake, multithreading, networking, cross-platform |
-| Skills used: other    | NATS, Docker, Bash, Linux administration, Jenkins CI/CD |
+<table class="table">
+<tr>
+<td>Re&shy;sponsi&shy;bilities</td>
+<td>Design and implement high-load infrastructure web service written in
+ C++ using asynchronous programming, WebSockets, NATS messaging broker.
+Writing code, code review, interviewing candidates, build engineering
+(CI/CD), unit tests.</td>
+</tr>
+<tr>
+<td>Skills used: C++</td>
+<td>C++ 20, Boost.Asio, Boost.Beast, coroutines, STL, CMake, multithreading, networking, cross-platform</td>
+</tr>
+<tr>
+<td>Skills used: other</td>
+<td>NATS, Docker, Bash, Linux administration, Jenkins CI/CD</td>
+</tr>
+</table>
 
+<h3><nobr>August 2021 - May 2022</nobr></h3>
 
-### <nobr>August 2021 - May 2022</nobr>
+<table class="table">
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I quit my job to focus on relocation, preparing for interviews, spending more time with my family.</td>
+</tr>
+</table>
 
-| |
-|-|
-| I quit my job to focus on relocation, preparing for interviews, spending more time with my family. |
+<h3>N-able (ex-SolarWinds), USA | <nobr>Principal Software Engineer</nobr> | <nobr>March 2018 - July 2021</nobr></h3>
 
+<table class="table">
+<tr>
+<td>Partici&shy;pation</td>
+<td>Technical leadership in two internal startups (4-7 people). Created
+cross-platform web services using C++. Leaded the development of Windows
+ kernel-mode driver and archieved impressive results in the use of C++
+STL in kernel mode.<br><br> Designed an ensemble of web services. Designed and implemented backend REST services using Django, Python.</td>
+</tr>
+<tr>
+<td>Re&shy;sponsi&shy;bilities</td>
+<td>System design, mentoring colleagues, writing code, code review, interviewing candidates, build engineering (CI/CD), unit tests.</td>
+</tr>
+<tr>
+<td>Skills used: C++</td>
+<td>C++ 17, STL, CMake, Windows kernel mode (file system filter driver), multithreading, networking, Boost</td>
+</tr>
+<tr>
+<td>Skills used: Python</td>
+<td>Python 3, Django, DRF, JSON API, OpenAPI, type hints, pytest, flake8/mypy/&ZeroWidthSpace;pylint, pip-tools, uwsgi</td>
+</tr>
+<tr>
+<td>Skills used: other</td>
+<td>Docker, Bash, Linux administration, TeamCity DSL, SQLite, MySQL, AWS</td>
+</tr>
+</table>
 
-### N-able (ex-SolarWinds), USA | <nobr>Principal Software Engineer</nobr> | <nobr>March 2018 - July 2021</nobr>
+<h3>Rakuten Viber, Japan | <nobr>Senior Software Engineer</nobr> | <nobr>August 2015 - February 2018</nobr></h3>
 
-| | |
-|-|-|
-| Partici&shy;pation    | Technical leadership in two internal startups (4-7 people). Created cross-platform web services using C++. Leaded the development of Windows kernel-mode driver and archieved impressive results in the use of C++ STL in kernel mode.<br /><br /> Designed an ensemble of web services. Designed and implemented backend REST services using Django, Python. |
-| Re&shy;sponsi&shy;bilities | System design, mentoring colleagues, writing code, code review, interviewing candidates, build engineering (CI/CD), unit tests. |
-| Skills used: C++      | C++ 17, STL, CMake, Windows kernel mode (file system filter driver), multithreading, networking, Boost |
-| Skills used: Python   | Python 3, Django, DRF, JSON API, OpenAPI, type hints, pytest, flake8/mypy/&ZeroWidthSpace;pylint, pip-tools, uwsgi |
-| Skills used: other    | Docker, Bash, Linux administration, TeamCity DSL, SQLite, MySQL, AWS |
-
-
-### Rakuten Viber, Japan | <nobr>Senior Software Engineer</nobr> | <nobr>August 2015 - February 2018</nobr>
-
-| | |
-|-|-|
-| Partici&shy;pation    | Development of a cross-platform C++ engine for the Viber messenger (Windows, MacOS, Linux, Android, iOS). Improved automated builds. Introducted unit tests. I was involved in system administration and monitoring. |
-| Re&shy;sponsi&shy;bilities | Research, writing code, interviewing candidates, build engineering (CI), unit tests. |
-| Skills used           | C++ 11, STL, CMake, WebRTC, multithreading, networking, Docker, Bash, Linux administration, Boost, unit tests, Jenkins |
-
+<table class="table">
+<tr>
+<td>Partici&shy;pation</td>
+<td>Development of a cross-platform C++ engine for the Viber messenger
+(Windows, MacOS, Linux, Android, iOS). Improved automated builds.
+Introducted unit tests. I was involved in system administration and
+monitoring.</td>
+</tr>
+<tr>
+<td>Re&shy;sponsi&shy;bilities</td>
+<td>Research, writing code, interviewing candidates, build engineering (CI), unit tests.</td>
+</tr>
+<tr>
+<td>Skills used</td>
+<td>C++ 11, STL, CMake, WebRTC, multithreading, networking, Docker, Bash, Linux administration, Boost, unit tests, Jenkins</td>
+</tr>
+</table>
 
 <!-- <div style="page-break-after: always;"></div> -->
 
-### Optimal Software, Czech Republic | <nobr>Senior Software Developer</nobr> | <nobr>January 2012 - July 2015</nobr>
+<h3>Optimal Software, Czech Republic | <nobr>Senior Software Developer</nobr> | <nobr>January 2012 - July 2015</nobr></h3>
 
-| | |
-|-|-|
-| Partici&shy;pation    | Design and development of a VPN solution with custom VPN client for Windows. |
-| Re&shy;sponsi&shy;bilities | A wide range responsibilities, from implementing a VPN client using C++ and C#, passing web services to Linux server administration and implementing custom Nginx modules. |
-| Skills used           | C++, STL, Boost, multithreading, networking, WinAPI, Nginx, HTTP, DNS, OpenVPN, NAT, Linux administration, L7 firewall, Inno setup |
+<table class="table">
+<tr>
+<td>Partici&shy;pation</td>
+<td>Design and development of a VPN solution with custom VPN client for Windows.</td>
+</tr>
+<tr>
+<td>Re&shy;sponsi&shy;bilities</td>
+<td>A wide range responsibilities, from implementing a VPN client using
+C++ and C#, passing web services to Linux server administration and
+implementing custom Nginx modules.</td>
+</tr>
+<tr>
+<td>Skills used</td>
+<td>C++, STL, Boost, multithreading, networking, WinAPI, Nginx, HTTP,
+DNS, OpenVPN, NAT, Linux administration, L7 firewall, Inno setup</td>
+</tr>
+</table>
 
 <div style="page-break-after: always;"></div>
 
-### Web crawler startup, Czech Republic | <nobr>Owner, Software Developer</nobr> | <nobr>January 2008 - January 2012</nobr>
+<h3>Web crawler startup, Czech Republic | <nobr>Owner, Software Developer</nobr> | <nobr>January 2008 - January 2012</nobr></h3>
 
-| | |
-|-|-|
-| Partici&shy;pation    | System design, development, unit tests, system administration and monitoring |
-| Skills used           | C++, STL, HTTP, regular expressions, multithreading, WinAPI, Sqlite, MySQL, PHP, unit tests |
+<table class="table">
+<tr>
+<td>Partici&shy;pation</td>
+<td>System design, development, unit tests, system administration and monitoring</td>
+</tr>
+<tr>
+<td>Skills used</td>
+<td>C++, STL, HTTP, regular expressions, multithreading, WinAPI, Sqlite, MySQL, PHP, unit tests</td>
+</tr>
+</table>
 
-### Artezio | <nobr>Senior Software Developer</nobr> | <nobr>February 2007 - January 2008</nobr>
+<h3>Artezio | <nobr>Senior Software Developer</nobr> | <nobr>February 2007 - January 2008</nobr></h3>
 
-| | |
-|-|-|
-| Partici&shy;pation    | Software development, refactoring legacy, writing unit tests |
-| Skills used           | C++, COM, ATL, STL, WinAPI |
+<table class="table">
+<tr>
+<td>Partici&shy;pation</td>
+<td>Software development, refactoring legacy, writing unit tests</td>
+</tr>
+<tr>
+<td>Skills used</td>
+<td>C++, COM, ATL, STL, WinAPI</td>
+</tr>
+</table>
 
-### Applica, USA | <nobr>System Software Developer</nobr> | <nobr>April 2004 - August 2006</nobr>
+<h3>Applica, USA | <nobr>System Software Developer</nobr> | <nobr>April 2004 - August 2006</nobr></h3>
 
-| | |
-|-|-|
-| Partici&shy;pation    | <ul><li>Development of various low-level tricks with Windows: Gina replacement, API hooking, kernel debugging.<br /> <li>Tricks with tcp/ip stack on Windows: NDIS, TDI, LSP filtering.<br /> <li>Reverse engineering.<br /> <li>Manual decoding of high-level network protocols from an Ethernet packet flow. |
-| Skills used           | C++, MFC, WinAPI, ASP, IDA, WinDbg, SoftIce, NSIS |
+<table class="table">
+<tr>
+<td>Partici&shy;pation</td>
+<td><ul><li>Development of various low-level tricks with Windows: Gina replacement, API hooking, kernel debugging.<br> </li><li>Tricks with tcp/ip stack on Windows: NDIS, TDI, LSP filtering.<br> </li><li>Reverse engineering.<br> </li><li>Manual decoding of high-level network protocols from an Ethernet packet flow.</li></ul></td>
+</tr>
+<tr>
+<td>Skills used</td>
+<td>C++, MFC, WinAPI, ASP, IDA, WinDbg, SoftIce, NSIS</td>
+</tr>
+</table>
 
-### Ispirer | <nobr>Software Developer</nobr> | <nobr>June 2003 - April 2004</nobr>
+<h3>Ispirer | <nobr>Software Developer</nobr> | <nobr>June 2003 - April 2004</nobr></h3>
 
-| | |
-|-|-|
-| Partici&shy;pation    | It was a part-time job in my last year at university. I was engaged in development, improved SQL parsing, improved SQL syntax conversion between different database providers.<br /> I have proposed and developed a special metalanguage over XSLT to simplify the transformation of syntax trees. |
-| Skills used           | C++, MFC, WinAPI, ADO, COM, ATL, MS XML, Xslt, Yacc, Lex, NSIS |
+<table class="table">
+<tr>
+<td>Partici&shy;pation</td>
+<td>It was a part-time job in my last year at university. I was engaged
+in development, improved SQL parsing, improved SQL syntax conversion
+between different database providers.<br> I have proposed and developed a special metalanguage over XSLT to simplify the transformation of syntax trees.</td>
+</tr>
+<tr>
+<td>Skills used</td>
+<td>C++, MFC, WinAPI, ADO, COM, ATL, MS XML, Xslt, Yacc, Lex, NSIS</td>
+</tr>
+</table>
 
 <!-- =============================================================== -->
 
 <div style="page-break-after: always;"></div>
 
-## Portfolio
+<h2>Portfolio</h2>
 
-| | |
-|-|-|
-| Educa&shy;tion        | Master's degree, Computers, Systems and Networks, Belarusian State University of Informatics and Radio&shy;electronics, 2004 |
-| Lan&shy;guages        | English - fluent (B2, IELTS 6.5), Russian - native |
+<table class="table">
+<tr>
+<td>Educa&shy;tion</td>
+<td>Master's degree, Computers, Systems and Networks, Belarusian State University of Informatics and Radio&shy;electronics, 2004</td>
+</tr>
+<tr>
+<td>Lan&shy;guages</td>
+<td>English - fluent (B2, IELTS 6.5), Russian - native</td>
+</tr>
+</table>
 
-### Web Site Accounts
+<h3>Web Site Accounts</h3>
 
-| | |
-|-|-|
-| Linked&shy;In         | [linkedin.com&ZeroWidthSpace;/in/kolomenkin](https://www.linkedin.com/in/kolomenkin/) |
-| GitHub                | [github.com&ZeroWidthSpace;/kolomenkin](https://github.com/kolomenkin) |
-| Stack&shy;Over&shy;flow | [stackoverflow.com&ZeroWidthSpace;/users/739731/sergey](https://stackoverflow.com/users/739731/sergey) |
+<table class="table">
+<tr>
+<td>Linked&shy;In</td>
+<td><a href="https://www.linkedin.com/in/kolomenkin/">linkedin.com&ZeroWidthSpace;/in/kolomenkin</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/kolomenkin">github.com&ZeroWidthSpace;/kolomenkin</a></td>
+</tr>
+<tr>
+<td>Stack&shy;Over&shy;flow</td>
+<td><a href="https://stackoverflow.com/users/739731/sergey">stackoverflow.com&ZeroWidthSpace;/users/739731/sergey</a></td>
+</tr>
+</table>
 
-### Coding Contests
+<h3>Coding Contests</h3>
 
-| | |
-|-|-|
-| Leet&shy;Code         | [leetcode.com&ZeroWidthSpace;/kolomenkin](https://leetcode.com/kolomenkin/) |
-| Google Code&shy;Jam   | participation: [2011](https://www.go-hero.net/jam/11/name/Kolomenkin), [2012](https://www.go-hero.net/jam/12/name/Kolomenkin), [2013](https://www.go-hero.net/jam/13/name/Kolomenkin), [2014](https://www.go-hero.net/jam/14/name/Kolomenkin), [2015](https://www.go-hero.net/jam/15/name/Kolomenkin), [2016](https://www.go-hero.net/jam/16/name/Kolomenkin), [2017](https://www.go-hero.net/jam/17/name/Kolomenkin), [2022](https://codingcompetitions.withgoogle.com/codejam/certificate/summary/0000000000877249) |
+<table class="table">
+<tr>
+<td>Leet&shy;Code</td>
+<td><a href="https://leetcode.com/kolomenkin/">leetcode.com&ZeroWidthSpace;/kolomenkin</a></td>
+</tr>
+<tr>
+<td>Google Code&shy;Jam</td>
+<td>participation: <a href="https://www.go-hero.net/jam/11/name/Kolomenkin">2011</a>, <a href="https://www.go-hero.net/jam/12/name/Kolomenkin">2012</a>, <a href="https://www.go-hero.net/jam/13/name/Kolomenkin">2013</a>, <a href="https://www.go-hero.net/jam/14/name/Kolomenkin">2014</a>, <a href="https://www.go-hero.net/jam/15/name/Kolomenkin">2015</a>, <a href="https://www.go-hero.net/jam/16/name/Kolomenkin">2016</a>, <a href="https://www.go-hero.net/jam/17/name/Kolomenkin">2017</a>, <a href="https://codingcompetitions.withgoogle.com/codejam/certificate/summary/0000000000877249">2022</a></td>
+</tr>
+</table>
 
-### Examples of code
+<h3>Examples of code</h3>
 
-1. Here you can find some of my completed C++ interview test tasks:  
-<https://github.com/work-examples>
 
-2. [Limbo](https://github.com/kolomenkin/limbo) is a lightweight single page application written in Python
+<ol>
+
+<li>
+<p>
+Here you can find some of my completed C++ interview test tasks:<br>
+<a href="https://github.com/work-examples">https://github.com/work-examples</a>
+</p>
+</li>
+
+<li>
+<p>
+<a href="https://github.com/kolomenkin/limbo">Limbo</a> is a lightweight single page application written in Python
 with the simple ability to upload, download, list, delete files without authentication.
 All files are automatically deleted 24 hours after upload.
+</p>
+</li>
 
-3. Task Manager Extension is a powerful open source utility that hijacks the standard Windows Task Manager and
+<li>
+<p>
+   Task Manager Extension is a powerful open source utility that hijacks the standard Windows Task Manager and
    extends it with a ton of new features. The program is not working after Windows 7, alas!
-
-   In 2007 I wrote an [article on Codeproject.com](https://www.codeproject.com/Articles/10462/Task-Manager-Extension)
+</p>
+<p>
+   In 2007 I wrote an <a href="https://www.codeproject.com/Articles/10462/Task-Manager-Extension">article on Codeproject.com</a>
    about the Task Manager Extension.
+</p>
+</li>
 
+</ol>
 <!-- =============================================================== -->
-</div> <!-- <div id="cv_content"> -->
+</div> <!-- close cv_content -->
 <!-- =============================================================== -->
 
-<br />
+<p><br>
 Updated on: 01 of June 2025
+</p>
 
-</xmp>
+</div>
 <!-- =================================================================== -->
 <!-- END -->
 
+<!--
 <script src="./strapdownjs.com/v/0.2/strapdown.js"></script>
+-->
 
 <style>
 <!--
@@ -325,7 +476,7 @@ div.desired_specialization {
 }
 
 /*
- on small screens 26% is the minimum to guarantee equal first column width 
+ on small screens 26% is the minimum to guarantee equal first column width
  in all tables in current version of CV in Chrome 79
 
  "min-width: 45pt" helps to keep same column width on ultra-thin screns (tested in Chrome)
@@ -336,7 +487,7 @@ table.table td:first-child {
   min-width: 45pt;
 }
 
-/* 
+/*
  on wide screens 26% is too wide;
  22% is the minimum when first column will not decrease size when container
  size is recalculated after screen is crossing 980px width
@@ -498,7 +649,9 @@ p, h1, h2, h3 {  border: solid 1pt gray; }
 <!-- ============================================= -->
 
 <!-- Fix for MSIE11 ('TextDecoder' is undefined MSIE11): -->
+<!--
 <script src="./cdn.jsdelivr.net/npm/text-encoding@0.6.4/lib/encoding.min.js"></script>
+-->
 
 <!-- ============================================= -->
 
