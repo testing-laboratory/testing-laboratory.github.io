@@ -17,16 +17,354 @@
     <!-- Show full printable cover letter: ?content=cover_letter&show_photo=1 -->
     <!-- =================================================================== -->
 
-    <script>
-        // Redirect to HTTPS
-        if (window.location.protocol == 'http:') {
-          window.location.href = window.location.href.replace('http:', 'https:');
-        }
-    </script>
-
     <link href="./strapdownjs.com/v/0.2/strapdown.css" rel="stylesheet">
     <link href="./strapdownjs.com/v/0.2/themes/united.min.css" rel="stylesheet">
     <link href="./strapdownjs.com/v/0.2/themes/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <style>
+
+        div#content, .navbar {
+            /* TODO: .navbar needs to specify width equal to page width. This matters in case of horizontal scroll */
+            min-width: 200pt;
+        }
+
+        div#content, .navbar .container {
+            max-width: 650pt;
+        }
+
+        div#content {
+            padding: 1.5em;
+            background-color: #F5F5F5;
+            border: 1pt solid rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: Tahoma, Helvetica, Arial;
+        }
+
+        body, table {
+            font-size: 13pt;
+        }
+
+        .navbar .brand {
+            font-size: 115%;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 143%;
+            margin: 0em;
+        }
+
+        h2 {
+            font-size: 115%;
+            padding-top: 1em;
+        }
+
+        h3 {
+            font-size: 100%;
+            margin-top: 1em;
+            margin-bottom: 0em;
+        }
+
+        /* The same left padding for various items */
+
+        h3, table.table td, table.table th, div.desired_specialization, p, ul {
+            padding-left: 0px;
+        }
+
+        /* two-column table formatting: */
+
+        table.table {
+            width: 100%;
+            margin: 0em;
+            border: none;
+        }
+
+        table.table th {
+            padding-top: 0em;
+            padding-bottom: 0em;
+        }
+
+        /* Remove border above the first table row */
+        table.table td, table.table th {
+            border: none;
+        }
+
+        /* Remove right padding in the last columns of tables */
+        table.table th:last-child, table.table td:last-child {
+            padding-right: 0em;    /* give more space for H3 inside of tables */
+        }
+
+        table.table td {
+            border-bottom: 1pt solid rgba(0, 0, 0, 0.15);
+        }
+
+        /* Help table in "Basic info" block to float right to the photo: */
+        div.basic_info_with_photo table {
+            width: auto;
+        }
+
+        div.desired_specialization {
+            display: inline-block;
+            margin-top: 1em;
+            margin-bottom: 0.3em;
+        }
+
+        /* on small screens 26% is the minimum to guarantee equal first column width */
+        /* in all tables in current version of CV in Chrome 79 */
+        /* */
+        /* "min-width: 45pt" helps to keep same column width on ultra-thin screns (tested in Chrome) */
+        /* 45pt equals 76px on my display in Chrome, Windows 10 */
+        table.table td:first-child {
+            width: 26%;
+            min-width: 45pt;
+        }
+
+        /* on wide screens 26% is too wide; */
+        /* 22% is the minimum when first column will not decrease size when container */
+        /* size is recalculated after screen is crossing 980px width */
+        @media only screen and (min-width: 980px) {
+            table.table td:first-child {
+                width: 22%;
+            }
+        }
+
+        table.table td:last-child, p.about_me {
+            text-align: justify;
+        }
+
+        /* fix lists line indentation: */
+
+        ul {
+            display: table;
+            margin: 0em;
+        }
+
+        ul > li {
+            display: table-row;
+        }
+
+        ul > li::before {
+            content: "-";
+            display: table-cell; /* aha! */
+            text-align: left;
+            width: 1em;
+        }
+
+        /* emulate <wbr> support in MSIE */
+        wbr:after {
+            content: "\00200B";
+        }
+
+        /* Smaller font for mobile devices */
+        /* It looks like 13pt is good for Tab with width 13.5 cm */
+        /* It looks like 10.5pt is good for Tab with width 11 cm */
+        /* 30 em ~= 5 inches ~= 12.7 cm */
+        @media only screen and (max-device-width: 30em) {
+
+            body, table {
+                font-size: 10.5pt;
+            }
+
+            div#content, .navbar {
+                min-width: 130pt;
+            }
+
+            .navbar .brand {
+                font-weight: 400;
+            }
+        }
+
+        @media only print {
+            /* Printing is optimized for A4 portrait orientation, Google Chrome, Windows 10 */
+
+            /* Fix page size and margins for printing in Chrome */
+            @page {
+                size: A4 portrait;
+                margin: 1cm;
+            }
+
+            /* Print background color by default: Chrome, Edge, Firefox */
+            body {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            /* Reduce font size from 13pt for printing */
+            body, table {
+                font-size: 12pt;
+            }
+
+            /* Do not repeat table header on next page */
+            thead {
+                display: table-row-group;
+            }
+
+            /* hide fixed brown top block */
+            div.navbar-fixed-top {
+                display: none;
+            }
+
+            /* By the way, the following is not supported by any browser in 2019:
+                https://www.w3schools.com/cssref/pr_print_pageba.asp
+                page-break-before: avoid;
+                page-break-after: avoid;
+            */
+
+            /* DISABLED: avoid work experience tables from page break inside
+            table.table, p.about_me {
+                page-break-inside: avoid;
+            }
+            */
+        }
+
+        /* Special font size for MSIE 11. Font 12 pt makes MSIE 11 to break first page into two. */
+        @media only print and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+             /* IE10+ CSS styles go here */
+            body, table {
+                font-size: 11pt;
+            }
+        }
+
+
+        /* Avoid horizontal scroll in Chrome and MSIE when screen width is around 770-790 px */
+        /* Internal CSS code was taken from bootstrap from one of rules "@media(max-width:767px)" */
+        /* So we are trying to transfer logic from small screens to large ones. */
+        @media(min-width: 768px) and (max-width: 835px) {
+            body {
+                padding-right: 20px;
+                padding-left: 20px
+            }
+            .navbar-fixed-top,
+            .navbar-fixed-bottom,
+            .navbar-static-top {
+                margin-right: -20px;
+                margin-left: -20px
+            }
+            .container {
+                width: auto
+            }
+        }
+
+    </style>
+
+    <!-- ============================================= -->
+    <!-- ============================================= -->
+    <!-- ============================================= -->
+
+    <script>
+        /*
+            Base58 implementation:
+            https://gist.github.com/diafygi/90a3e80ca1c2793220e5/
+
+            Base58 online encoder:
+            https://incoherency.co.uk/base58/
+            https://www.browserling.com/tools/base58-encode
+            Replace: @ -> $; . -> /
+
+            A bit obfuscated code. Sorry for the style:
+        */
+
+        function from_b58(encodedString, charSet) {
+            var d = [],
+                b = [],
+                i, j, c, n;
+            for (i = 0; i < encodedString.length; i++) {
+                j = 0, c = charSet.indexOf(encodedString[i]);
+                if (c < 0) return undefined;
+                c || b.length ^ i ? i : b.push(0);
+                while (j in d || c) {
+                    n = d[j];
+                    n = n ? n * 58 + c : c;
+                    c = n >> 8;
+                    d[j] = n % 256;
+                    j++
+                }
+            }
+            while (j--) b.push(d[j]);
+            return new Uint8Array(b)
+        }
+        function unhide_info(encodedString) {
+            const decoded = new TextDecoder('utf-8').decode(from_b58(encodedString, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'));
+            return decoded.replace(/@/g, ' ERROR ').replace(/\$/g, '&commat;').replace(/\//g, '&period;');
+        }
+        function mail_link(encodedString) {
+            const mail = unhide_info(encodedString);
+            return '<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;' + mail + '">' + mail.replace(/&commat;/g, '<wbr />&commat;') + '</a>';
+        }
+        function put_mail_link(elementId, encodedString) {
+            document.getElementById(elementId).innerHTML = mail_link(encodedString);
+        }
+
+        function setupElementBorders(elementSelector, borderStyleDescription)
+        {
+            const elements = document.querySelectorAll(elementSelector);
+            for (var i = 0, n = elements.length; i < n; i++)
+            {
+                elements[i].style.border = borderStyleDescription;
+            }
+        }
+
+        function setupPage()
+        {
+            // Redirect to HTTPS
+            if (window.location.protocol == 'http:') {
+                window.location.href = window.location.href.replace('http:', 'https:');
+            }
+
+            // Decode private information:
+            put_mail_link('my_mail', '2Vp5awyT62PT8Utj4jPUWE4wsY6Y');
+
+            // Enable photo block:
+            if (window.location.search.indexOf('show_photo=1') >= 0)
+            {
+                document.getElementById('basic_info_id').className = 'basic_info_with_photo';
+                document.getElementById('main_photo_div').hidden = false;
+                document.getElementById('main_photo_img').src = getImageURL();
+            }
+
+            if (window.location.search.indexOf('content=cover_letter') >= 0)
+            {
+                const title = 'Sergey Kolomenkin - Cover Letter'
+                document.getElementById('cover_letter_content').hidden = false;
+                document.title = title
+                document.getElementById('headline').innerHTML = title
+                document.getElementById('cv_content').hidden = true;
+            }
+
+            if (window.location.search.indexOf('debug=1') >= 0)
+            {
+                setupElementBorders('body', 'solid 10pt cyan');
+                setupElementBorders('div.navbar', 'solid 2pt blue');
+                setupElementBorders('div#content', 'solid 2pt red');
+                setupElementBorders('table.table', 'solid 2pt orange');
+                setupElementBorders('table.table th', 'dashed 1pt pink');
+                setupElementBorders('table.table td', 'dotted 1pt blue');
+                setupElementBorders('p, h1, h2, h3', 'solid 1pt gray');
+            }
+        }
+
+        function getImageURL()
+        {
+            return './noindex/photo_01.jpg';
+            // ========================================
+            // const prefix = 'data:image/jpeg;base64,';
+            // https://www.motobit.com/util/base64-decoder-encoder.asp
+            // const data = ``;
+            // return prefix + data.replace(/\n|\r/g, '');
+        }
+
+        document.addEventListener("DOMContentLoaded", setupPage);
+
+    </script>
+
+    <!-- ============================================= -->
+    <!-- ============================================= -->
+    <!-- ============================================= -->
 </head>
 <body>
 
@@ -528,350 +866,6 @@
 </div>
 <!-- =================================================================== -->
 <!-- END -->
-
-<style>
-
-    div#content, .navbar {
-      /* TODO: .navbar needs to specify width equal to page width. This matters in case of horizontal scroll */
-      min-width: 200pt;
-    }
-
-    div#content, .navbar .container {
-      max-width: 650pt;
-    }
-
-    div#content {
-      padding: 1.5em;
-      background-color: #F5F5F5;
-      border: 1pt solid rgba(0, 0, 0, 0.15);
-    }
-
-    body {
-      font-family: Tahoma, Helvetica, Arial;
-    }
-
-    body, table {
-      font-size: 13pt;
-    }
-
-    .navbar .brand {
-      font-size: 115%;
-    }
-
-    h1, h2, h3 {
-      font-weight: bold;
-    }
-
-    h1 {
-      font-size: 143%;
-      margin: 0em;
-    }
-
-    h2 {
-      font-size: 115%;
-      padding-top: 1em;
-    }
-
-    h3 {
-      font-size: 100%;
-      margin-top: 1em;
-      margin-bottom: 0em;
-    }
-
-    /* The same left padding for various items */
-
-    h3, table.table td, table.table th, div.desired_specialization, p, ul {
-      padding-left: 0px;
-    }
-
-    /* two-column table formatting: */
-
-    table.table {
-      width: 100%;
-      margin: 0em;
-      border: none;
-    }
-
-    table.table th {
-      padding-top: 0em;
-      padding-bottom: 0em;
-    }
-
-    /* Remove border above the first table row */
-    table.table td, table.table th {
-      border: none;
-    }
-
-    /* Remove right padding in the last columns of tables */
-    table.table th:last-child, table.table td:last-child {
-      padding-right: 0em;  /* give more space for H3 inside of tables */
-    }
-
-    table.table td {
-      border-bottom: 1pt solid rgba(0, 0, 0, 0.15);
-    }
-
-    /* Help table in "Basic info" block to float right to the photo: */
-    div.basic_info_with_photo table {
-      width: auto;
-    }
-
-    div.desired_specialization {
-      display: inline-block;
-      margin-top: 1em;
-      margin-bottom: 0.3em;
-    }
-
-    /*
-     on small screens 26% is the minimum to guarantee equal first column width
-     in all tables in current version of CV in Chrome 79
-
-     "min-width: 45pt" helps to keep same column width on ultra-thin screns (tested in Chrome)
-     45pt equals 76px on my display in Chrome, Windows 10
-    */
-    table.table td:first-child {
-      width: 26%;
-      min-width: 45pt;
-    }
-
-    /*
-     on wide screens 26% is too wide;
-     22% is the minimum when first column will not decrease size when container
-     size is recalculated after screen is crossing 980px width
-    */
-    @media only screen and (min-width: 980px) {
-      table.table td:first-child {
-        width: 22%;
-      }
-    }
-
-    table.table td:last-child, p.about_me {
-      text-align: justify;
-    }
-
-    /* fix lists line indentation: */
-
-    ul {
-      display: table;
-      margin: 0em;
-    }
-
-    ul > li {
-      display: table-row;
-    }
-
-    ul > li::before {
-      content: "-";
-      display: table-cell; /* aha! */
-      text-align: left;
-      width: 1em;
-    }
-
-    /* emulate <wbr> support in MSIE */
-    wbr:after {
-      content: "\00200B";
-    }
-
-    /* Smaller font for mobile devices */
-    /* It looks like 13pt is good for Tab with width 13.5 cm */
-    /* It looks like 10.5pt is good for Tab with width 11 cm */
-    /* 30 em ~= 5 inches ~= 12.7 cm */
-    @media only screen and (max-device-width: 30em) {
-
-      body, table {
-        font-size: 10.5pt;
-      }
-
-      div#content, .navbar {
-        min-width: 130pt;
-      }
-
-      .navbar .brand {
-        font-weight: 400;
-      }
-    }
-
-    @media only print {
-      /* Printing is optimized for A4 portrait orientation, Google Chrome, Windows 10 */
-
-      /* Fix page size and margins for printing in Chrome */
-      @page {
-        size: A4 portrait;
-        margin: 1cm;
-      }
-
-      /* Print background color by default: Chrome, Edge, Firefox */
-      body {
-        -webkit-print-color-adjust: exact;
-        color-adjust: exact;
-      }
-
-      /* Reduce font size from 13pt for printing */
-      body, table {
-        font-size: 12pt;
-      }
-
-      /* Do not repeat table header on next page */
-      thead {
-        display: table-row-group;
-      }
-
-      /* hide fixed brown top block */
-      div.navbar-fixed-top {
-        display: none;
-      }
-
-      /* By the way, the following is not supported by any browser in 2019:
-        https://www.w3schools.com/cssref/pr_print_pageba.asp
-        page-break-before: avoid;
-        page-break-after: avoid;
-      */
-
-      /* DISABLED: avoid work experience tables from page break inside
-      table.table, p.about_me {
-        page-break-inside: avoid;
-      }
-      */
-    }
-
-    /* Special font size for MSIE 11. Font 12 pt makes MSIE 11 to break first page into two. */
-    @media only print and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-       /* IE10+ CSS styles go here */
-      body, table {
-        font-size: 11pt;
-      }
-    }
-
-
-    /* Avoid horizontal scroll in Chrome and MSIE when screen width is around 770-790 px */
-    /* Internal CSS code was taken from bootstrap from one of rules "@media(max-width:767px)" */
-    /* So we are trying to transfer logic from small screens to large ones. */
-    @media(min-width: 768px) and (max-width: 835px) {
-      body {
-        padding-right: 20px;
-        padding-left: 20px
-      }
-      .navbar-fixed-top,
-      .navbar-fixed-bottom,
-      .navbar-static-top {
-        margin-right: -20px;
-        margin-left: -20px
-      }
-      .container {
-        width: auto
-      }
-    }
-
-</style>
-
-<!-- ============================================= -->
-
-<!-- 
-Base58 implementation:
-https://gist.github.com/diafygi/90a3e80ca1c2793220e5/
-
-Base58 online encoder:
-https://incoherency.co.uk/base58/
-https://www.browserling.com/tools/base58-encode
-Replace: @ -> $; . -> /
-Result example:
-<span id="my_id"></span><script>put_mail_link('my_id', '4FsZFKXVyJd3TiseM7LVS')</script>
-
-A bit obfuscated code. Sorry for the style:
--->
-<script>
-    function from_b58(encodedString, charSet) {
-      var d = [],
-        b = [],
-        i, j, c, n;
-      for (i = 0; i < encodedString.length; i++) {
-        j = 0, c = charSet.indexOf(encodedString[i]);
-        if (c < 0) return undefined;
-        c || b.length ^ i ? i : b.push(0);
-        while (j in d || c) {
-          n = d[j];
-          n = n ? n * 58 + c : c;
-          c = n >> 8;
-          d[j] = n % 256;
-          j++
-        }
-      }
-      while (j--) b.push(d[j]);
-      return new Uint8Array(b)
-    }
-    function unhide_info(encodedString) {
-      const decoded = new TextDecoder('utf-8').decode(from_b58(encodedString, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'));
-      return decoded.replace(/@/g, ' ERROR ').replace(/\$/g, '&commat;').replace(/\//g, '&period;');
-    }
-    function mail_link(encodedString) {
-      const mail = unhide_info(encodedString);
-      return '<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;' + mail + '">' + mail.replace(/&commat;/g, '<wbr />&commat;') + '</a>';
-    }
-    function put_mail_link(elementId, encodedString) {
-      document.getElementById(elementId).innerHTML = mail_link(encodedString);
-    }
-</script>
-
-<!-- ============================================= -->
-<script>
-
-    function setupElementBorders(elementSelector, borderStyleDescription)
-    {
-      const elements = document.querySelectorAll(elementSelector);
-      for (var i = 0, n = elements.length; i < n; i++)
-      {
-        elements[i].style.border = borderStyleDescription;
-      }
-    }
-
-    function setupPage()
-    {
-      // Decode private information:
-      put_mail_link('my_mail', '2Vp5awyT62PT8Utj4jPUWE4wsY6Y');
-
-      // Enable photo block:
-      if (window.location.search.indexOf('show_photo=1') >= 0)
-      {
-        document.getElementById('basic_info_id').className = 'basic_info_with_photo';
-        document.getElementById('main_photo_div').hidden = false;
-        document.getElementById('main_photo_img').src = getImageURL();
-      }
-
-      if (window.location.search.indexOf('content=cover_letter') >= 0)
-      {
-        const title = 'Sergey Kolomenkin - Cover Letter'
-        document.getElementById('cover_letter_content').hidden = false;
-        document.title = title
-        document.getElementById('headline').innerHTML = title
-        document.getElementById('cv_content').hidden = true;
-      }
-
-      if (window.location.search.indexOf('debug=1') >= 0)
-      {
-        setupElementBorders('body', 'solid 10pt cyan');
-        setupElementBorders('div.navbar', 'solid 2pt blue');
-        setupElementBorders('div#content', 'solid 2pt red');
-        setupElementBorders('table.table', 'solid 2pt orange');
-        setupElementBorders('table.table th', 'dashed 1pt pink');
-        setupElementBorders('table.table td', 'dotted 1pt blue');
-        setupElementBorders('p, h1, h2, h3', 'solid 1pt gray');
-      }
-    }
-
-    function getImageURL()
-    {
-      return './noindex/photo_01.jpg';
-      // ========================================
-      // const prefix = 'data:image/jpeg;base64,';
-      // https://www.motobit.com/util/base64-decoder-encoder.asp
-      // const data = ``;
-      // return prefix + data.replace(/\n|\r/g, '');
-    }
-
-    setupPage();
-
-</script>
-<!-- ============================================= -->
 
 </body>
 </html>
