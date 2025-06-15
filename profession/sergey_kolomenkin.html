@@ -18,8 +18,8 @@
         }
     </script>
 
-    <link href="./strapdownjs.com/v/0.2/themes/united.min.css" rel="stylesheet">
     <link href="./strapdownjs.com/v/0.2/strapdown.css" rel="stylesheet">
+    <link href="./strapdownjs.com/v/0.2/themes/united.min.css" rel="stylesheet">
     <link href="./strapdownjs.com/v/0.2/themes/bootstrap-responsive.min.css" rel="stylesheet">
 </head>
 <body>
@@ -50,11 +50,16 @@
             <img src="data:" id="main_photo_img" alt="photo" style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
         </div>
 
-        <div class="desired_specialization">
-            <strong>Senior C++ Developer</strong>
-        </div>
-
-        <table class="table">
+        <table class="table floating_block">
+            <thead>
+            <tr>
+                <th colspan="2">
+                    <div class="desired_specialization">
+                        <strong>Senior C++ Developer</strong>
+                    </div>
+                </th>
+            </tr>
+            </thead>
             <tr>
                 <td>Loca&shy;tion</td>
                 <td>Warsaw, Poland</td>
@@ -207,8 +212,8 @@
                 <td>Technical leadership in two internal startups (4-7 people). Created
                     cross-platform web services using C++. Leaded the development of Windows
                     kernel-mode driver and archieved impressive results in the use of C++
-                    STL in kernel mode.<br>
-                    <br>
+                    STL in kernel mode.<br/>
+                    <br/>
                     Designed an ensemble of web services.
                     Designed and implemented backend REST services using Django, Python.
                 </td>
@@ -358,9 +363,9 @@
                 <td>Partici&shy;pation</td>
                 <td>
                     <ul>
-                        <li>Development of various low-level tricks with Windows: Gina replacement, API hooking, kernel debugging.<br></li>
-                        <li>Tricks with tcp/ip stack on Windows: NDIS, TDI, LSP filtering.<br></li>
-                        <li>Reverse engineering.<br></li>
+                        <li>Development of various low-level tricks with Windows: Gina replacement, API hooking, kernel debugging.<br/></li>
+                        <li>Tricks with tcp/ip stack on Windows: NDIS, TDI, LSP filtering.<br/></li>
+                        <li>Reverse engineering.<br/></li>
                         <li>Manual decoding of high-level network protocols from an Ethernet packet flow.</li>
                     </ul>
                 </td>
@@ -387,7 +392,7 @@
                 <td>Partici&shy;pation</td>
                 <td>It was a part-time job in my last year at university. I was engaged
                     in development, improved SQL parsing, improved SQL syntax conversion
-                    between different database providers.<br>
+                    between different database providers.<br/>
                     I have proposed and developed a special metalanguage over XSLT to simplify the transformation of syntax trees.
                 </td>
             </tr>
@@ -479,7 +484,7 @@
                     <ol>
                         <li>
                             <p>
-                                Here you can find some of my completed C++ interview test tasks:<br>
+                                Here you can find some of my completed C++ interview test tasks:<br/>
                                 <a href="https://github.com/work-examples">https://github.com/work-examples</a>
                             </p>
                         </li>
@@ -514,7 +519,8 @@
     </div> <!-- close cv_content -->
     <!-- =============================================================== -->
 
-    <p><br>
+    <p></p>
+    <p>
         Updated on: 01 of June 2025
     </p>
 
@@ -522,12 +528,7 @@
 <!-- =================================================================== -->
 <!-- END -->
 
-<!--
-<script src="./strapdownjs.com/v/0.2/strapdown.js"></script>
--->
-
 <style>
-    <!--
 
     div#content, .navbar {
       /* TODO: .navbar needs to specify width equal to page width. This matters in case of horizontal scroll */
@@ -595,8 +596,13 @@
       padding-bottom: 0em;
     }
 
+    /* Remove border above the first table row */
     table.table td, table.table th {
       border: none;
+    }
+
+    /* Remove right padding in the last columns of tables */
+    table.table th:last-child, table.table td:last-child {
       padding-right: 0em;  /* give more space for H3 inside of tables */
     }
 
@@ -788,15 +794,7 @@
 
     /* ============== END OF DEBUG ONLY  ============== */
 
-    -->
 </style>
-
-<!-- ============================================= -->
-
-<!-- Fix for MSIE11 ('TextDecoder' is undefined MSIE11): -->
-<!--
-<script src="./cdn.jsdelivr.net/npm/text-encoding@0.6.4/lib/encoding.min.js"></script>
--->
 
 <!-- ============================================= -->
 
@@ -811,7 +809,7 @@ Replace: @ -> $; . -> /
 Result example:
 <span id="my_id"></span><script>put_mail_link('my_id', '4FsZFKXVyJd3TiseM7LVS')</script>
 
-A bit obfucated code. Sorry for the style:
+A bit obfuscated code. Sorry for the style:
 -->
 <script>
     function from_b58(encodedString, charSet) {
@@ -853,13 +851,6 @@ A bit obfucated code. Sorry for the style:
     {
       // Decode private information:
       put_mail_link('my_mail', '2Vp5awyT62PT8Utj4jPUWE4wsY6Y');
-
-      // Style tables: remove classes for stripes and borders:
-      const items = document.getElementsByTagName('table');
-      for (var i = 0, n = items.length; i < n; i++)
-      {
-        items[i].className = 'table';
-      }
 
       // Enable photo block:
       if (window.location.search.indexOf('show_photo=1') >= 0)
