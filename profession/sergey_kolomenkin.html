@@ -11,6 +11,12 @@
 
     <title>Sergey Kolomenkin - Curriculum&nbsp;Vitae</title>
 
+    <!-- =================================================================== -->
+    <!-- Show full printable CV: ?show_photo=1 -->
+    <!-- Show full printable CV with debug info: ?show_photo=1&debug=1 -->
+    <!-- Show full printable cover letter: ?content=cover_letter&show_photo=1 -->
+    <!-- =================================================================== -->
+
     <script>
         // Redirect to HTTPS
         if (window.location.protocol == 'http:') {
@@ -36,18 +42,13 @@
 <!-- =================================================================== -->
 <div class="container" id="content">
 
-    <!-- =================================================================== -->
-    <!-- Show full printable CV: ?show_photo=1 -->
-    <!-- Show full printable cover letter: ?content=cover_letter&show_photo=1 -->
-    <!-- =================================================================== -->
-
     <h1>Sergey Kolomenkin</h1>
 
     <!-- =============================================================== -->
 
     <div id="basic_info_id" style="float: left; width: 100%;">
         <div style="float: left;" id="main_photo_div" hidden>
-            <img src="data:" id="main_photo_img" alt="photo" style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
+            <img src="data:image/jpeg;base64," id="main_photo_img" alt="photo" style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
         </div>
 
         <table class="table floating_block">
@@ -115,7 +116,7 @@
     </div> <!-- close cover_letter_content -->
 
     <!-- =============================================================== -->
-    <div id="cv_content" class="columned_block" hidden>
+    <div id="cv_content" class="columned_block">
         <!-- =============================================================== -->
 
         <table class="table floating_block">
@@ -761,39 +762,6 @@
       }
     }
 
-    /* ============== DEBUG ONLY:  ============== */
-    /*
-    * /
-
-    table.table th {
-      padding-top: 0.7em;
-      padding-bottom: 0.7em;
-    }
-
-    body {
-      margin: 0.35em;
-      padding: 0.35em;
-      border: solid 10pt cyan;
-    }
-
-    div.navbar {
-      margin: 0.35em;
-      padding: 0.35em;
-      border: solid 2pt blue;
-    }
-
-    div#content { border: solid 2pt red; }
-
-    table.table { border: solid 2pt orange; }
-
-    table.table th { border: dashed 1pt pink; }
-
-    table.table td { border: dotted 1pt blue; }
-
-    p, h1, h2, h3 {  border: solid 1pt gray; }
-
-    /* ============== END OF DEBUG ONLY  ============== */
-
 </style>
 
 <!-- ============================================= -->
@@ -847,6 +815,15 @@ A bit obfuscated code. Sorry for the style:
 <!-- ============================================= -->
 <script>
 
+    function setupElementBorders(elementSelector, borderStyleDescription)
+    {
+      const elements = document.querySelectorAll(elementSelector);
+      for (var i = 0, n = elements.length; i < n; i++)
+      {
+        elements[i].style.border = borderStyleDescription;
+      }
+    }
+
     function setupPage()
     {
       // Decode private information:
@@ -866,10 +843,18 @@ A bit obfuscated code. Sorry for the style:
         document.getElementById('cover_letter_content').hidden = false;
         document.title = title
         document.getElementById('headline').innerHTML = title
+        document.getElementById('cv_content').hidden = true;
       }
-      else
+
+      if (window.location.search.indexOf('debug=1') >= 0)
       {
-        document.getElementById('cv_content').hidden = false;
+        setupElementBorders('body', 'solid 10pt cyan');
+        setupElementBorders('div.navbar', 'solid 2pt blue');
+        setupElementBorders('div#content', 'solid 2pt red');
+        setupElementBorders('table.table', 'solid 2pt orange');
+        setupElementBorders('table.table th', 'dashed 1pt pink');
+        setupElementBorders('table.table td', 'dotted 1pt blue');
+        setupElementBorders('p, h1, h2, h3', 'solid 1pt gray');
       }
     }
 
