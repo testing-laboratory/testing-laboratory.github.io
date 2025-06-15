@@ -117,7 +117,7 @@
             <thead>
             <tr>
                 <th colspan="2">
-                    <h2>Major Technical Strengths</h2>
+                    <h3>Major Technical Strengths</h3>
                 </th>
             </tr>
             </thead>
@@ -567,12 +567,12 @@
 
     h2 {
       font-size: 115%;
-      padding-top: 0.7em;
+      padding-top: 1em;
     }
 
     h3 {
       font-size: 100%;
-      margin-top: 0.7em;
+      margin-top: 1em;
       margin-bottom: 0em;
     }
 
@@ -702,6 +702,11 @@
       /* Reduce font size from 13pt for printing */
       body, table {
         font-size: 12pt;
+      }
+
+      /* Do not repeat table header on next page */
+      thead {
+        display: table-row-group;
       }
 
       /* hide fixed brown top block */
