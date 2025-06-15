@@ -289,16 +289,33 @@
             while (j--) b.push(d[j]);
             return new Uint8Array(b)
         }
+
         function unhide_info(encodedString) {
-            const decoded = new TextDecoder('utf-8').decode(from_b58(encodedString, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'));
+            const decoded = new TextDecoder('utf-8').decode(from_b58(encodedString,
+                '123456789'
+                + 'ABCDEFGHJKLMNPQRSTUVWXYZ'
+                + 'abcdefghijkmnopqrstuvwxyz'));
             return decoded.replace(/@/g, ' ERROR ').replace(/\$/g, '&commat;').replace(/\//g, '&period;');
         }
+
         function mail_link(encodedString) {
             const mail = unhide_info(encodedString);
-            return '<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;' + mail + '">' + mail.replace(/&commat;/g, '<wbr />&commat;') + '</a>';
+            return '<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;' + mail + '">'
+                + mail.replace(/&commat;/g, '<wbr />&commat;') + '</a>';
         }
+
         function put_mail_link(elementId, encodedString) {
             document.getElementById(elementId).innerHTML = mail_link(encodedString);
+        }
+
+        function getImageURL()
+        {
+            return './noindex/photo_01.jpg';
+            // ========================================
+            // const prefix = 'data:image/jpeg;base64,';
+            // https://www.motobit.com/util/base64-decoder-encoder.asp
+            // const data = ``;
+            // return prefix + data.replace(/\n|\r/g, '');
         }
 
         function setupElementBorders(elementSelector, borderStyleDescription)
@@ -347,16 +364,6 @@
                 setupElementBorders('table.table td', 'dotted 1pt blue');
                 setupElementBorders('p, h1, h2, h3', 'solid 1pt gray');
             }
-        }
-
-        function getImageURL()
-        {
-            return './noindex/photo_01.jpg';
-            // ========================================
-            // const prefix = 'data:image/jpeg;base64,';
-            // https://www.motobit.com/util/base64-decoder-encoder.asp
-            // const data = ``;
-            // return prefix + data.replace(/\n|\r/g, '');
         }
 
         document.addEventListener("DOMContentLoaded", setupPage);
