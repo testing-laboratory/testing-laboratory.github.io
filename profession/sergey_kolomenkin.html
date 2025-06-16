@@ -327,6 +327,15 @@
             }
         }
 
+        function hideElements(elementSelector)
+        {
+            const elements = document.querySelectorAll(elementSelector);
+            for (var i = 0, n = elements.length; i < n; i++)
+            {
+                elements[i].hidden = true;
+            }
+        }
+
         function setupPage()
         {
             // Redirect to HTTPS
@@ -340,18 +349,18 @@
             // Enable photo block:
             if (window.location.search.indexOf('show_photo=1') >= 0)
             {
-                document.getElementById('basic_info_id').className = 'basic_info_with_photo';
+                document.getElementById('basic_info_id').classList.add('basic_info_with_photo');
                 document.getElementById('main_photo_div').hidden = false;
                 document.getElementById('main_photo_img').src = getImageURL();
             }
 
             if (window.location.search.indexOf('content=cover_letter') >= 0)
             {
-                const title = 'Sergey Kolomenkin - Cover Letter'
+                const title = 'Sergey Kolomenkin - Cover Letter';
                 document.getElementById('cover_letter_content').hidden = false;
                 document.title = title
-                document.getElementById('headline').innerHTML = title
-                document.getElementById('cv_content').hidden = true;
+                document.getElementById('headline').innerHTML = title;
+                hideElements('.columned_block > :not(.cover_letter_part)');
             }
 
             if (window.location.search.indexOf('debug=1') >= 0)
@@ -391,78 +400,80 @@
     <h1>Sergey Kolomenkin</h1>
 
     <!-- =============================================================== -->
+    <div class="columned_block">
+        <!-- =============================================================== -->
 
-    <div id="basic_info_id" style="float: left; width: 100%;">
-        <div style="float: left;" id="main_photo_div" hidden>
-            <img src="data:image/jpeg;base64," id="main_photo_img" alt="photo" style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
+
+        <div id="basic_info_id" class="floating_block cover_letter_part" style="float: left; width: 100%;">
+            <div style="float: left;" id="main_photo_div" hidden>
+                <img src="data:image/jpeg;base64," id="main_photo_img" alt="photo"
+                     style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
+            </div>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th colspan="2">
+                        <div class="desired_specialization">
+                            <strong>Senior C++ Developer</strong>
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <tr>
+                    <td>Loca&shy;tion</td>
+                    <td>Warsaw, Poland</td>
+                </tr>
+                <tr hidden>
+                    <td>Reloca&shy;tion</td>
+                    <td>I am ready to move</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><span id="my_mail"></span><span id="my_skype" hidden>; Skype: <a href="skype:kolomenkin">kolomenkin</a></span></td>
+                </tr>
+                <tr>
+                    <td>Expe&shy;rience</td>
+                    <td>20+ years in software development</td>
+                </tr>
+            </table>
         </div>
 
-        <table class="table floating_block">
-            <thead>
-            <tr>
-                <th colspan="2">
-                    <div class="desired_specialization">
-                        <strong>Senior C++ Developer</strong>
-                    </div>
-                </th>
-            </tr>
-            </thead>
-            <tr>
-                <td>Loca&shy;tion</td>
-                <td>Warsaw, Poland</td>
-            </tr>
-            <tr hidden>
-                <td>Reloca&shy;tion</td>
-                <td>I am ready to move</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><span id="my_mail"></span><span id="my_skype" hidden>; Skype: <a href="skype:kolomenkin">kolomenkin</a></span></td>
-            </tr>
-            <tr>
-                <td>Expe&shy;rience</td>
-                <td>20+ years in software development</td>
-            </tr>
-        </table>
-    </div>
+        <!-- =============================================================== -->
 
-    <!-- =============================================================== -->
+        <div id="cover_letter_content" class="cover_letter_part" hidden>
 
-    <div id="cover_letter_content" hidden>
+            <h2>Cover Letter</h2>
 
-        <h2>Cover Letter</h2>
+            <p class="about_me">
+                During <strong>20+ years in C++</strong> I was working on various projects including
+                system programming, computer networking, multithreading, interprocess communication
+                for desktop applications, mobile apps, backend services.
+            </p>
 
-        <p class="about_me">
-            During <strong>20+ years in C++</strong> I was working on various projects including
-            system programming, computer networking, multithreading, interprocess communication
-            for desktop applications, mobile apps, backend services.
-        </p>
+            <p class="about_me">
+                I'm looking for a challenging innovative position,
+                where I can design technically complex software solutions and develop new cutting edge products.
+            </p>
 
-        <p class="about_me">
-            I'm looking for a challenging innovative position,
-            where I can design technically complex software solutions and develop new cutting edge products.
-        </p>
+            <p class="about_me">
+                Positions in the following areas are of special interest for me:
+                <strong>C++, research, high-performance systems, high load, multithreading,
+                    interprocess communication, asynchronous programming,
+                    low-level speed optimization, cross-platform compilation</strong>.
+            </p>
 
-        <p class="about_me">
-            Positions in the following areas are of special interest for me:
-            <strong>C++, research, high-performance systems, high load, multithreading,
-                interprocess communication, asynchronous programming,
-                low-level speed optimization, cross-platform compilation</strong>.
-        </p>
+            <p><strong>General Strengths</strong></p>
 
-        <p><strong>General Strengths</strong></p>
+            <ul>
+                <li>deep knowledge and understanding of used technologies</li>
+                <li>system design</li>
+                <li>helping, training colleagues</li>
+                <li>striving for stable CI/CD process, internal tools, unit tests</li>
+            </ul>
 
-        <ul>
-            <li>deep knowledge and understanding of used technologies</li>
-            <li>system design</li>
-            <li>helping, training colleagues</li>
-            <li>striving for stable CI/CD process, internal tools, unit tests</li>
-        </ul>
+        </div> <!-- close cover_letter_content -->
 
-    </div> <!-- close cover_letter_content -->
-
-    <!-- =============================================================== -->
-    <div id="cv_content" class="columned_block">
         <!-- =============================================================== -->
 
         <div class="floating_block">
@@ -894,15 +905,14 @@
             </table>
         </div>
 
+        <p class="cover_letter_part">&nbsp;</p>
+        <p class="cover_letter_part">
+            Updated on: 01 of June 2025
+        </p>
 
         <!-- =============================================================== -->
-    </div> <!-- close cv_content -->
+    </div> <!-- close columned_block -->
     <!-- =============================================================== -->
-
-    <p>&nbsp;</p>
-    <p>
-        Updated on: 01 of June 2025
-    </p>
 
 </div>
 <!-- =================================================================== -->
