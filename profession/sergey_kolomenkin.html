@@ -73,7 +73,7 @@
 
         /* The same left padding for various items */
 
-        h3, table.table td, table.table th, div.desired_specialization, p, ul {
+        h3, table.table td, table.table th, p, ul {
             padding-left: 0px;
         }
 
@@ -107,12 +107,6 @@
         /* Help table in "Basic info" block to float right to the photo: */
         div.basic_info_with_photo table {
             width: auto;
-        }
-
-        div.desired_specialization {
-            display: inline-block;
-            margin-top: 1em;
-            margin-bottom: 0.3em;
         }
 
         /* on small screens 26% is the minimum to guarantee equal first column width */
@@ -167,6 +161,18 @@
             display: table-cell; /* aha! */
             text-align: left;
             width: 1em;
+        }
+
+        .with_location_pin::before {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            background-image: url('images/location_pin.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 0.2em;
         }
 
         /* emulate <wbr> support in MSIE */
@@ -427,16 +433,12 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th colspan="2">
-                            <div class="desired_specialization">
-                                <strong>Senior C++ Developer</strong>
-                            </div>
-                        </th>
+                        <th colspan="2"><h2>Senior C++ Developer</h2></th>
                     </tr>
                     </thead>
                     <tr>
                         <td>Loca&shy;tion</td>
-                        <td>Warsaw, Poland</td>
+                        <td><span class="with_location_pin">Warsaw, Poland</span></td>
                     </tr>
                     <tr hidden>
                         <td>Reloca&shy;tion</td>
@@ -449,7 +451,7 @@
                     </tr>
                     <tr>
                         <td>Expe&shy;rience</td>
-                        <td>20+ years in software development</td>
+                        <td><strong>20+ years in software development</strong></td>
                     </tr>
                 </table>
             </div>
