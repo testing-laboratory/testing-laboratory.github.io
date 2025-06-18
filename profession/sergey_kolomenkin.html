@@ -147,9 +147,18 @@
         }
 
         .left_pane {
+            float: left;
+            width: 25%;
         }
 
         .right_pane {
+            float: right;
+            width: 70%;
+        }
+
+        /* Hide first column in table in left pane */
+        .left_pane table.table td:first-child {
+            display: none;
         }
 
         /* fix lists line indentation: */
@@ -180,6 +189,17 @@
             background-size: contain;
             background-repeat: no-repeat;
             margin-right: 0.2em;
+        }
+
+        .major_skill {
+            display: inline-block;
+            padding: 0.25em 0.5em;
+            background-color: #EEEEEE;
+            color: #333333;
+            border: 1px solid #AAAAAA;
+            border-radius: 0.5em;
+            line-height: 1;
+            white-space: nowrap;
         }
 
         /* emulate <wbr> support in MSIE */
@@ -223,7 +243,7 @@
 
             /* Reduce font size from 13pt for printing */
             body, table {
-                font-size: 12pt;
+                font-size: 10pt;
             }
 
             /* Do not repeat table header on next page */
@@ -435,7 +455,7 @@
             <div id="basic_info_id" class="floating_block cover_letter_part" style="float: left; width: 100%;">
                 <div style="float: left;" id="main_photo_div" hidden>
                     <img src="data:image/jpeg;base64," id="main_photo_img" alt="photo"
-                         style="margin-top: 12pt; margin-right: 12pt; height:144pt;"/>
+                         style="margin-top: 12pt; margin-right: 12pt; width: 116pt;"/>
                 </div>
             </div>
 
@@ -446,47 +466,39 @@
                     <thead>
                     <tr>
                         <th colspan="2">
-                            <h3>Major Technical Strengths</h3>
+                            <h4>Major Technical Strengths</h4>
                         </th>
                     </tr>
                     </thead>
                     <tr>
-                        <td>Expert</td>
-                        <td><strong>
-                            <span class="major_skill">Cross-platform</span>,
-                            <span class="major_skill">multithreading</span>,
-                            <span class="major_skill">multiprocessing</span>,
-                            <span class="major_skill">async</span>,
-                            <span class="major_skill">networking</span></strong>,
-                            <span class="major_skill">MySQL</span>,
-                            <span class="major_skill">Bash</span>,
-                            <span class="major_skill">C++</span>,
-                            <span class="major_skill">STL</span>,
-                            <span class="major_skill">Boost.Asio</span>,
-                            <span class="major_skill">Boost.Beast</span>,
-                            <span class="major_skill">CMake</span>,
-                            Win32 system level and high-level programming
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Very Strong</td>
-                        <td>
-                            <span class="major_skill">Software design</span>,
-                            <span class="major_skill">Windows file system filter drivers</span>,
-                            <span class="major_skill">Docker</span>,
-                            <span class="major_skill">Linux administration</span>,
-                            <nobr><span class="major_skill">Python 3</span>,</nobr>
-                            <span class="major_skill">hardware design</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Strong</td>
-                        <td>
-                            <span class="major_skill">Kubernetes</span>,
-                            <span class="major_skill">x86 assembler</span>,
-                            <span class="major_skill">OpenVPN</span>,
-                            <span class="major_skill">Django</span>,
+                        <td>Skills</td>
+                        <td style="line-height: 2.5em;">
+                            <strong>
+                                <span class="major_skill">cross-platform</span>
+                                <span class="major_skill">C++</span>
+                                <span class="major_skill">multithreading</span>
+                                <span class="major_skill">async</span>
+                                <span class="major_skill">networking</span>
+                            </strong>
+                            <span class="major_skill">STL</span>
+                            <span class="major_skill">Boost.Asio</span>
+                            <span class="major_skill">Boost.Beast</span>
+                            <span class="major_skill">CMake</span>
+                            <span class="major_skill">MySQL</span>
+                            <span class="major_skill">Win32 API</span>
+                            <span class="major_skill">software design</span>
+                            <span class="major_skill">Windows filter driver</span>
+                            <span class="major_skill">Docker</span>
+                            <span class="major_skill">Kubernetes</span>
+                            <span class="major_skill">Bash</span>
+                            <span class="major_skill">Linux administration</span>
+                            <nobr><span class="major_skill">Python 3</span></nobr>
+                            <span class="major_skill">Django</span>
                             <span class="major_skill">DRF</span>
+                            <span class="major_skill">hardware design</span>
+                            <span class="major_skill">x86 assembler</span>
+                            <span class="major_skill">OpenVPN</span>
+                            <span class="major_skill">WebRTC</span>
                         </td>
                     </tr>
                 </table>
@@ -579,8 +591,7 @@
                     </tr>
                     </thead>
                     <tr>
-                        <td>Re&shy;sponsi&shy;bilities</td>
-						<td>
+                        <td colspan="2">
                             Design and implement high-load infrastructure web service written in
                             C++ using asynchronous programming, WebSockets, NATS messaging broker.
                             Writing code, code review, interviewing candidates, build engineering
@@ -630,8 +641,7 @@
                     </tr>
                     </thead>
                     <tr>
-                        <td>Partici&shy;pation</td>
-						<td>
+                        <td colspan="2">
                             Technical leadership in two internal startups (4-7 people). Created
                             cross-platform web services using C++. Leaded the development of Windows
                             kernel-mode driver and archived impressive results in the use of C++
@@ -663,6 +673,16 @@
                     </tr>
                 </table>
             </div>
+
+            <!-- =============================================================== -->
+        </div> <!-- close right_pane -->
+    </div> <!-- close pane_owner -->
+    <div class="wide_pane_owner">
+        <div class="wide_pane_left">
+        </div>
+        <div class="wide_pane">
+            <!-- =============================================================== -->
+            <div style="page-break-after: always;"></div>
 
             <div class="floating_block">
                 <table class="table">
@@ -731,9 +751,6 @@
                     </tr>
                 </table>
             </div>
-
-
-            <div style="page-break-after: always;"></div>
 
 
             <div class="floating_block">
@@ -847,8 +864,6 @@
 
 
             <!-- =============================================================== -->
-
-            <div style="page-break-after: always;"></div>
 
             <h2 class="floating_block">Portfolio and Educa&shy;tion</h2>
 
@@ -975,8 +990,8 @@
             </p>
 
             <!-- =============================================================== -->
-        </div> <!-- close right_pane -->
-    </div> <!-- close pane_owner -->
+        </div> <!-- close wide_pane -->
+    </div> <!-- close wide_pane_owner -->
     <!-- =============================================================== -->
 
 </div>
