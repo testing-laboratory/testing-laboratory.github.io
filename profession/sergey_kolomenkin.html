@@ -13,6 +13,9 @@
     <title>Sergey Kolomenkin - Curriculum&nbsp;Vitae</title>
 
     <!-- =================================================================== -->
+    <!-- Welcome to my CV source code! -->
+    <!-- I tried to make it as clean as possible without any front-end experience. -->
+    <!-- =================================================================== -->
     <!-- Show full printable CV: ?show_photo=1 -->
     <!-- Show full printable CV with debug info: ?show_photo=1&debug=1 -->
     <!-- Show full printable cover letter: ?content=cover_letter&show_photo=1 -->
@@ -70,6 +73,7 @@
             font-size: 100%;
             margin-top: 1em;
             margin-bottom: 0em;
+            line-height: normal;
         }
 
         /* The same left padding for various items */
@@ -79,7 +83,7 @@
         }
 
         .job_title, .job_period {
-            font-size: 80%;
+            font-size: 85%;
         }
 
         /* two-column table formatting: */
@@ -148,7 +152,7 @@
 
         .left_pane {
             float: left;
-            width: 25%;
+            width: 22%;
         }
 
         .right_pane {
@@ -191,14 +195,19 @@
             margin-right: 0.2em;
         }
 
+        .major_skill_owner {
+            line-height: 2.35em;
+        }
+
         .major_skill {
+            font-size: 85%;
             display: inline-block;
             padding: 0.25em 0.5em;
-            background-color: #EEEEEE;
+            background-color: #E5E5E5;
             color: #333333;
             border: 1px solid #AAAAAA;
             border-radius: 0.5em;
-            line-height: 1;
+            line-height: 1em;
             white-space: nowrap;
         }
 
@@ -267,6 +276,10 @@
                 page-break-inside: avoid;
             }
             */
+
+            .major_skill_owner {
+                line-height: 2.7em;
+            }
         }
 
         /* Special font size for MSIE 11. Font 12 pt makes MSIE 11 to break first page into two. */
@@ -465,40 +478,42 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th colspan="2">
-                            <h4>Major Technical Strengths</h4>
+                        <th colspan="2" style="padding-top: 20pt;">
+                            <strong>Major Technical Strengths</strong>
                         </th>
                     </tr>
                     </thead>
                     <tr>
                         <td>Skills</td>
-                        <td style="line-height: 2.5em;">
-                            <strong>
-                                <span class="major_skill">cross-platform</span>
-                                <span class="major_skill">C++</span>
-                                <span class="major_skill">multithreading</span>
-                                <span class="major_skill">async</span>
-                                <span class="major_skill">networking</span>
-                            </strong>
-                            <span class="major_skill">STL</span>
-                            <span class="major_skill">Boost.Asio</span>
-                            <span class="major_skill">Boost.Beast</span>
-                            <span class="major_skill">CMake</span>
-                            <span class="major_skill">MySQL</span>
-                            <span class="major_skill">Win32 API</span>
-                            <span class="major_skill">software design</span>
-                            <span class="major_skill">Windows filter driver</span>
-                            <span class="major_skill">Docker</span>
-                            <span class="major_skill">Kubernetes</span>
-                            <span class="major_skill">Bash</span>
-                            <span class="major_skill">Linux administration</span>
-                            <nobr><span class="major_skill">Python 3</span></nobr>
-                            <span class="major_skill">Django</span>
-                            <span class="major_skill">DRF</span>
-                            <span class="major_skill">hardware design</span>
-                            <span class="major_skill">x86 assembler</span>
-                            <span class="major_skill">OpenVPN</span>
-                            <span class="major_skill">WebRTC</span>
+                        <td style="border-bottom: 0;">
+                            <div class="major_skill_owner">
+                                <strong>
+                                    <span class="major_skill">cross-platform</span>
+                                    <span class="major_skill">C++</span>
+                                    <span class="major_skill">multithreading</span>
+                                    <span class="major_skill">async</span>
+                                    <span class="major_skill">networking</span>
+                                </strong>
+                                <span class="major_skill">STL</span>
+                                <span class="major_skill">Boost.Asio</span>
+                                <span class="major_skill">Boost.Beast</span>
+                                <span class="major_skill">CMake</span>
+                                <span class="major_skill">MySQL</span>
+                                <span class="major_skill">Win32 API</span>
+                                <span class="major_skill">software design</span>
+                                <span class="major_skill">Windows filter driver</span>
+                                <span class="major_skill">Docker</span>
+                                <span class="major_skill">Kubernetes</span>
+                                <span class="major_skill">Bash</span>
+                                <span class="major_skill">Linux administration</span>
+                                <nobr><span class="major_skill">Python 3</span></nobr>
+                                <span class="major_skill">Django</span>
+                                <span class="major_skill">DRF</span>
+                                <span class="major_skill">hardware design</span>
+                                <span class="major_skill">x86 assembler</span>
+                                <span class="major_skill">OpenVPN</span>
+                                <span class="major_skill">WebRTC</span>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -513,7 +528,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th colspan="2"><h2>Senior C++ Developer</h2></th>
+                        <th colspan="2"><h2 style="padding-top: 5pt;">Senior C++ Developer</h2></th>
                     </tr>
                     </thead>
                     <tr>
