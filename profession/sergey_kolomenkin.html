@@ -63,6 +63,7 @@
         h2 {
             font-size: 115%;
             padding-top: 1em;
+            line-height: normal;
         }
 
         h3 {
@@ -75,6 +76,10 @@
 
         h3, table.table td, table.table th, p, ul {
             padding-left: 0px;
+        }
+
+        .job_title, .job_period {
+            font-size: 80%;
         }
 
         /* two-column table formatting: */
@@ -133,7 +138,9 @@
         }
 
         /* Two CV panes */
-        .pane_owner {
+        .pane_owner, .wide_pane_owner {
+            width: 100%;
+            clear: both;
         }
 
         .left_pane, .right_pane {
@@ -381,6 +388,7 @@
                 document.getElementById('headline').innerHTML = title;
                 hideElements('.left_pane > :not(.cover_letter_part)');
                 hideElements('.right_pane > :not(.cover_letter_part)');
+                hideElements('.wide_pane > :not(.cover_letter_part)');
             }
 
             if (window.location.search.indexOf('debug=1') >= 0)
