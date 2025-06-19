@@ -114,11 +114,6 @@
             border-bottom: 1pt solid rgba(0, 0, 0, 0.15);
         }
 
-        /* Help table in "Basic info" block to float right to the photo: */
-        div.basic_info_with_photo table {
-            width: auto;
-        }
-
         /* on small screens 26% is the minimum to guarantee equal first column width */
         /* in all tables in current version of CV in Chrome 79 */
         /* */
@@ -414,7 +409,6 @@
             // Enable photo block:
             if (window.location.search.indexOf('show_photo=1') >= 0)
             {
-                document.getElementById('basic_info_id').classList.add('basic_info_with_photo');
                 document.getElementById('main_photo_div').hidden = false;
                 document.getElementById('main_photo_img').src = getImageURL();
             }
@@ -425,9 +419,16 @@
                 document.getElementById('cover_letter_content').hidden = false;
                 document.title = title
                 document.getElementById('headline').innerHTML = title;
+                hideElements('#basic_info_experience');
                 hideElements('.left_pane > :not(.cover_letter_part)');
                 hideElements('.right_pane > :not(.cover_letter_part)');
                 hideElements('.wide_pane > :not(.cover_letter_part)');
+
+                // Increase fonts for cover letter:
+                document.body.style.fontSize = 'calc(1em + 1pt)';
+                document.querySelectorAll('table').forEach(table => {
+                  table.style.fontSize = 'calc(1em + 1pt)';
+                });
             }
 
             if (window.location.search.indexOf('debug=1') >= 0)
@@ -474,11 +475,9 @@
         <div class="left_pane">
             <!-- =============================================================== -->
 
-            <div id="basic_info_id" class="cover_letter_part" style="float: left; width: 100%;">
-                <div style="float: left;" id="main_photo_div" hidden>
-                    <img src="data:image/jpeg;base64," id="main_photo_img" alt="Sergey Kolomenkin photo"
-                         style="margin-top: 12pt; margin-right: 12pt; width: 116pt; border-radius: 7pt;"/>
-                </div>
+            <div id="main_photo_div" class="cover_letter_part" hidden>
+                <img src="data:image/jpeg;base64," id="main_photo_img" alt="Sergey Kolomenkin photo"
+                     style="margin-top: 12pt; margin-right: 12pt; width: 116pt; border-radius: 7pt;"/>
             </div>
 
             <!-- =============================================================== -->
@@ -554,47 +553,12 @@
                             <span id="my_skype" hidden>; Skype: <a href="skype:kolomenkin">kolomenkin</a></span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="basic_info_experience">
                         <td>Expe&shy;rience</td>
                         <td><strong>20+ years in software development</strong></td>
                     </tr>
                 </table>
             </div>
-
-            <!-- =============================================================== -->
-
-            <div id="cover_letter_content" class="cover_letter_part" hidden>
-
-                <h2>Cover Letter</h2>
-
-                <p class="about_me">
-                    During <strong>20+ years in C++</strong> I was working on various projects including
-                    system programming, computer networking, multithreading, interprocess communication
-                    for desktop applications, mobile apps, backend services.
-                </p>
-
-                <p class="about_me">
-                    I'm looking for a challenging innovative position,
-                    where I can design technically complex software solutions and develop new cutting edge products.
-                </p>
-
-                <p class="about_me">
-                    Positions in the following areas are of special interest for me:
-                    <strong>C++, research, high-performance systems, high load, multithreading,
-                        interprocess communication, asynchronous programming,
-                        low-level speed optimization, cross-platform compilation</strong>.
-                </p>
-
-                <p><strong>General Strengths</strong></p>
-
-                <ul>
-                    <li>deep knowledge and understanding of used technologies</li>
-                    <li>system design</li>
-                    <li>helping, training colleagues</li>
-                    <li>striving for stable CI/CD process, internal tools, unit tests</li>
-                </ul>
-
-            </div> <!-- close cover_letter_content -->
 
             <!-- =============================================================== -->
 
@@ -702,10 +666,44 @@
         </div> <!-- close right_pane -->
     </div> <!-- close pane_owner -->
     <div class="wide_pane_owner">
-        <div class="wide_pane_left">
-        </div>
         <div class="wide_pane">
             <!-- =============================================================== -->
+
+            <div id="cover_letter_content" class="cover_letter_part" hidden>
+
+                <h2>Cover Letter</h2>
+
+                <p class="about_me">
+                    During <strong>20+ years in C++</strong> I was working on various projects including
+                    system programming, computer networking, multithreading, interprocess communication
+                    for desktop applications, mobile apps, backend services.
+                </p>
+
+                <p class="about_me">
+                    I'm looking for a challenging innovative position,
+                    where I can design technically complex software solutions and develop new cutting edge products.
+                </p>
+
+                <p class="about_me">
+                    Positions in the following areas are of special interest for me:
+                    <strong>C++, research, high-performance systems, high load, multithreading,
+                        interprocess communication, asynchronous programming,
+                        low-level speed optimization, cross-platform compilation</strong>.
+                </p>
+
+                <p><strong>General Strengths</strong></p>
+
+                <ul>
+                    <li>deep knowledge and understanding of used technologies</li>
+                    <li>system design</li>
+                    <li>helping, training colleagues</li>
+                    <li>striving for stable CI/CD process, internal tools, unit tests</li>
+                </ul>
+
+            </div> <!-- close cover_letter_content -->
+
+            <!-- =============================================================== -->
+
             <div style="page-break-after: always;"></div>
 
             <div>
@@ -1009,7 +1007,7 @@
             </div>
 
             <p class="cover_letter_part">&nbsp;</p>
-            <p class="cover_letter_part" style="text-align: right;">
+            <p class="cover_letter_part">
                 Updated on: 01 of June 2025
             </p>
 
