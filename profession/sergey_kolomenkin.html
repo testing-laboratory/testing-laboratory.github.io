@@ -147,17 +147,22 @@
             clear: both;
         }
 
+        .pane_owner {
+            display: flex;
+            gap: 15pt;       /* space between panes */
+            flex-wrap: wrap; /* allows wrapping on small screens */
+        }
+
         .left_pane, .right_pane {
+            box-sizing: border-box;
         }
 
         .left_pane {
-            float: left;
-            width: 22%;
+            flex: 22;
         }
 
         .right_pane {
-            float: right;
-            width: 70%;
+            flex: 70;
         }
 
         /* Hide first column in table in left pane */
