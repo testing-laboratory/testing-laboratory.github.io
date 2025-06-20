@@ -145,7 +145,7 @@
 
         .pane_owner {
             display: flex;
-            column-gap: 20pt; /* space between panes */
+            column-gap: 6%;   /* space between panes */
             flex-wrap: wrap;  /* allows wrapping on small screens */
         }
 
@@ -154,7 +154,7 @@
         }
 
         .left_pane {
-            flex: 22;
+            flex: 24;
         }
 
         .right_pane {
@@ -201,10 +201,10 @@
         }
 
         .major_skill {
-            font-size: 85%;
+            font-size: 95%;
             display: inline-block;
             padding: 0.25em 0.5em;
-            background-color: #E5E5E5;
+            background-color: #EAEAEA;
             color: #333333;
             border: 1px solid #AAAAAA;
             border-radius: 0.5em;
@@ -254,6 +254,11 @@
             /* Reduce font size from 13pt for printing */
             body, table {
                 font-size: 10pt;
+            }
+
+            /* make first table column slimer for printing on the first page */
+            .right_pane table.table td:first-child {
+                width: 20%;
             }
 
             /* Do not repeat table header on next page */
@@ -467,7 +472,7 @@
 
     <div>
         <h1 style="display: inline-block; margin-right: 15pt;">Sergey Kolomenkin</h1>
-        <div style="display: inline-block; font-weight: bold; font-size: 110%;">Senior C++ Developer</div>
+        <div style="display: inline-block; font-weight: bold; font-size: 110%; display: none;">Senior C++ Developer</div>
     </div>
 
     <!-- =============================================================== -->
@@ -485,7 +490,7 @@
             <div>
                 <table class="table">
                     <thead>
-                    <tr>
+                    <tr hidden>
                         <th colspan="2">
                             <h3>Major Technical Strengths</h3>
                         </th>
@@ -535,8 +540,8 @@
             <div class="cover_letter_part" style="padding-top: 10px;">
                 <table class="table">
                     <thead>
-                    <tr hidden>
-                        <th colspan="2"><h2>Senior C++ Developer</h2></th>
+                    <tr>
+                        <th colspan="2"><h2 style="padding-top: 0pt; margin-top: 5pt;">Senior C++ Developer</h2></th>
                     </tr>
                     </thead>
                     <tr>
