@@ -27,9 +27,12 @@
           fetch(fileUrl)
             .then( r => r.text() )
             .then( t => {
-              // document.write(t);
+              fixedHtmlText = t;
+              fixedHtmlText = fixedHtmlText.replace(/http:\/\//g, 'https://');
+
+              // document.write(fixedHtmlText);
               var newHTML = document.open('text/html', 'replace');
-              newHTML.write(t.replace(/http:\/\//g, 'https://'));
+              newHTML.write(fixedHtmlText);
               newHTML.close();
             })
         }
