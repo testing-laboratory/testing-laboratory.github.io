@@ -28,7 +28,9 @@
             .then( r => r.text() )
             .then( t => {
               fixedHtmlText = t;
-              fixedHtmlText = fixedHtmlText.replace(/http:\/\/strapdownjs\.com\//g, 'https://kolomenkin.com/profession/strapdownjs.com/');
+              // strapdownjs.com does not serve "http://strapdownjs.com/v/0.2/strapdown.js" any more:
+              fixedHtmlText = fixedHtmlText.replace(/https?:\/\/strapdownjs\.com\//g, 'https://kolomenkin.com/profession/strapdownjs.com/');
+              // HTTP does not work any more:
               fixedHtmlText = fixedHtmlText.replace(/http:\/\//g, 'https://');
 
               // document.write(fixedHtmlText);
